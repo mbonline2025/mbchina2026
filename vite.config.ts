@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
+  base: "./", // ✅ ADICIONE ESTA LINHA
   plugins: [react(), tailwindcss()],
   root: path.resolve(__dirname, "client"),
   resolve: {
