@@ -4,21 +4,18 @@ import { defineConfig } from "vite";
 import path from "path";
 
 export default defineConfig({
-  base: "./", // ✅ ADICIONE ESTA LINHA
+  base: "./",
   plugins: [react(), tailwindcss()],
   root: path.resolve(__dirname, "client"),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
-    },
-  },
+  publicDir: path.resolve(__dirname, "client/public"),
   build: {
-    outDir: path.resolve(__dirname, "client", "dist"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
-  server: {
-    port: 3000,
-    host: true,
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "client/src"),
+      "@shared": path.resolve(__dirname, "shared"),
+    },
   },
 });
