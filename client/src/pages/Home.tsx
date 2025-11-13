@@ -150,6 +150,18 @@ export default function Home() {
 
   const [isFormOpen, setIsFormOpen] = useState(false);
 
+  // Componente auxiliar pra justificar cada linha
+const JustifiedLine = ({ text, className = "" }: { text: string; className?: string }) => (
+  <div className={`flex justify-between ${className}`}>
+    {text.split("").map((char: string, i: number) => (
+      <span key={i} className="inline-block">
+        {char === " " ? "\u00A0" : char}
+      </span>
+    ))}
+  </div>
+);
+
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Header />
@@ -163,17 +175,24 @@ export default function Home() {
             filter: 'brightness(0.2)'
           }}
         />
-        <div className="relative z-10 text-center text-white px-4 w-full max-w-full">
-          <h1 className="text-4xl md:text-8xl lg:text-9xl font-bold tracking-wide mb-2 animate-fade-in overflow-hidden">
-            MB CHINA
-          </h1>
-          <h2 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-wide animate-fade-in-delay-1 overflow-hidden">
-            IA & INNOVATION
-          </h2>
-          <p className="text-sm md:text-lg lg:text-xl tracking-[0.3em] mt-6 animate-fade-in-delay-2 overflow-hidden">
-            EXECUTIVE MISSION 2026
-          </p>
-        </div>
+       <div className="relative z-10 text-white px-4 w-full">
+  <div className="max-w-4xl mx-auto text-center">
+    <JustifiedLine
+      text="MB CHINA"
+      className="text-4xl md:text-8xl lg:text-9xl font-bold mb-1"
+    />
+
+    <JustifiedLine
+      text="IA & INNOVATION"
+      className="text-3xl md:text-6xl lg:text-7xl font-bold mb-3"
+    />
+
+    <JustifiedLine
+      text="EXECUTIVE MISSION 2026"
+      className="text-sm md:text-lg lg:text-xl"
+    />
+  </div>
+</div>
         
         {/* Mouse Scroll Animation */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
