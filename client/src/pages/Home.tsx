@@ -573,6 +573,7 @@ export default function Home() {
 
           {/* Indicador de interatividade no mobile */}
           <div className="md:hidden text-center mb-8 overflow-hidden">
+
           </div>
 
           {/* Logo */}
@@ -912,12 +913,6 @@ export default function Home() {
             >
               <p className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
                 18 A 22 DE MAIO DE 2026
-              </p>
-              <p className="text-sm text-gray-600 mb-2 uppercase tracking-wide">
-                Investimento Individual
-              </p>
-              <p className="text-2xl md:text-4xl font-semibold text-gray-900 mt-1">
-                R$ 45.800,00
               </p>
             </div>
           </div>
