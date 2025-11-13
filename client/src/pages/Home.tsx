@@ -231,9 +231,9 @@ export default function Home() {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              Uma jornada estratégica
-              <br /> de conhecimento rumo
-              <br /> ao futuro
+              UMA JORNADA ESTRATÉGICA
+              <br /> DE CONHECIMENTO RUMO
+              <br /> AO FUTURO
             </span>
           </h2>
 
@@ -355,7 +355,7 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto relative z-10 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <div data-animate id="vivenciar-title">
-              <h2 className={`text-3xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
+              <h2 className={`text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
                 isVisible['vivenciar-title'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 O QUE IRÃO<br />VIVENCIAR
@@ -410,7 +410,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <div data-animate id="resultados-title">
               <h2
-                className={`text-3xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
+                className={`text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
                   isVisible['resultados-title']
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
