@@ -926,6 +926,8 @@ export default function Home() {
           Entre em contato para mais informações sobre valores e condições
         </p>
       </div>
+
+      
     </div>
   </div>
 </section>
