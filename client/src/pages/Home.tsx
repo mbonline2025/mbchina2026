@@ -573,10 +573,6 @@ export default function Home() {
 
           {/* Indicador de interatividade no mobile */}
           <div className="md:hidden text-center mb-8 overflow-hidden">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-              <div className="w-2 h-2 bg-[#C8102E] rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-700 font-medium">Toque para explorar nos cards</span>
-            </div>
           </div>
 
           {/* Logo */}

@@ -37,12 +37,12 @@ export default function Header() {
           </button>
         ))}
 
-        <a
-          href="#info-content"
+        <button
+          onClick={() => scrollToSection("info-content")}
           className="ml-2 bg-[#F5E6D3] text-gray-900 font-semibold text-sm rounded-full px-5 py-1.5 flex items-center gap-2 hover:bg-[#f8eede] transition"
         >
           Inscreva-se <ArrowRight size={14} />
-        </a>
+        </button>
       </div>
 
       {/* Mobile Hamburger Button */}
@@ -71,12 +71,12 @@ export default function Header() {
             </button>
           ))}
 
-          <a
-            href="#info-content"
+          <button
+            onClick={() => scrollToSection("info-content")}
             className="mt-6 bg-[#F5E6D3] text-[#C8102E] font-semibold text-lg rounded-full px-8 py-3 flex items-center gap-3 hover:bg-[#f8eede] transition"
           >
             Inscreva-se <ArrowRight size={18} />
-          </a>
+          </button>
         </nav>
       )}
     </header>
