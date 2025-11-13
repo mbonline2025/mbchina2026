@@ -798,7 +798,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
               <p className="text-gray-800 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 Sua estrutura é estrategicamente alinhada com a dinâmica dos negócios contemporâneos, proporcionando oportunidades e exemplos inspiradores para enfrentar os desafios e transformações no mundo corporativo.
               </p>
-              <p className="text-sm text-gray-600 font-bold">
+              <p className="text-sm text-black-600 font-bold">
                 Luiz Alberto Nicolau | CEO Samel
               </p>
             </div>
@@ -809,7 +809,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
               <p className="text-gray-800 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 O programa nos proporcionou uma interação com profissionais e empresários, práticas nas visitas às empresas, que nos trouxeram informações ricas e que fomentaram debates muito proveitosos.
               </p>
-              <p className="text-sm text-gray-600 font-bold">
+              <p className="text-sm text-black-600 font-bold">
                 Sandra Fernandes, sócia diretora | Lojas COMEPI
               </p>
             </div>
@@ -820,7 +820,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
               <p className="text-gray-800 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
                 O Programa conseguiu aliar seu conteúdo e teoria de temas relevantes. A organização do programa desde a escolha do local, os seminários em sala de aula, os docentes foram feitos com muito cuidado e esmero
               </p>
-              <p className="text-sm text-gray-600 font-bold">
+              <p className="text-sm text-black-600 font-bold">
                 Socorro Canton, diretora de operação | BEMOL
               </p>
             </div>
