@@ -61,7 +61,7 @@ export default function Home() {
             desenvolvimento de modelos generativos, data centers massivos e aplicações em saúde e finanças.
           </p>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-            Shanghai definiu como meta tornar-se uma “montanha” de inovação industrial em IA — reforçando
+            Shanghai definiu como meta tornar-se uma "montanha" de inovação industrial em IA — reforçando
             que a inteligência artificial não é apenas software: exige hardware, dados, instalações e políticas.
           </p>
         </>
@@ -77,7 +77,7 @@ export default function Home() {
             A Cidade da Prosperidade Sustentável
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
-            Suzhou é considerada “a cidade-prefeitura mais próspera da China”, com um PIB de cerca de
+            Suzhou é considerada "a cidade-prefeitura mais próspera da China", com um PIB de cerca de
             <strong> US$ 375 bilhões</strong>, a sexta maior economia urbana da China continental. Com cerca
             de 13 milhões de habitantes, seu PIB per capita é de <strong>US$ 28.000</strong>, superior ao de
             todas as grandes economias emergentes.
@@ -151,11 +151,11 @@ const toggleAudio = () => {
 
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden"> {/* CORREÇÃO: overflow-x-hidden na div principal */}
       <Header />
 
       {/* Seção 1 - Hero */}
-      <section className="relative h-screen flex items-center justify-center pt-20" id="hero">
+      <section className="relative h-screen flex items-center justify-center pt-20 overflow-hidden" id="hero"> {/* CORREÇÃO: overflow-hidden */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -163,14 +163,14 @@ const toggleAudio = () => {
             filter: 'brightness(0.2)'
           }}
         />
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-wide mb-2 animate-fade-in">
+        <div className="relative z-10 text-center text-white px-4 w-full max-w-full"> {/* CORREÇÃO: w-full e max-w-full */}
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-wide mb-2 animate-fade-in overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
             MB CHINA
           </h1>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide animate-fade-in-delay-1">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide animate-fade-in-delay-1 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
             IA & INNOVATION
           </h2>
-          <p className="text-base md:text-lg lg:text-xl tracking-[0.3em] mt-6 animate-fade-in-delay-2">
+          <p className="text-base md:text-lg lg:text-xl tracking-[0.3em] mt-6 animate-fade-in-delay-2 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
             EXECUTIVE MISSION 2026
           </p>
         </div>
@@ -207,7 +207,7 @@ const toggleAudio = () => {
   />
 
   {/* Conteúdo principal */}
-  <div className="container max-w-4xl mx-auto relative z-10">
+  <div className="container max-w-4xl mx-auto relative z-10 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
     {/* Logo */}
     <div className="text-center mb-8" data-animate id="intro-logo">
       <img
@@ -223,7 +223,7 @@ const toggleAudio = () => {
 
     {/* Título */}
     <h2
-      className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-8 font-bold leading-tight"
+      className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-8 font-bold leading-tight overflow-hidden" /* CORREÇÃO: overflow-hidden */
       data-animate
       id="intro-title"
     >
@@ -242,7 +242,7 @@ const toggleAudio = () => {
 
     {/* Texto introdutório */}
     <p
-      className="text-center text-base md:text-lg mb-12 text-gray-800 leading-relaxed max-w-3xl mx-auto"
+      className="text-center text-base md:text-lg mb-12 text-gray-800 leading-relaxed max-w-3xl mx-auto overflow-hidden" /* CORREÇÃO: overflow-hidden */
       data-animate
       id="intro-text"
     >
@@ -261,13 +261,13 @@ const toggleAudio = () => {
 
     {/* Ícones e estatísticas */}
     <div
-      className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-24 md:gap-32"
+      className="flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-24 md:gap-32 overflow-hidden" /* CORREÇÃO: overflow-hidden */
       data-animate
       id="intro-stats"
     >
       {/* Bloco 1 */}
       <div
-        className={`text-center transition-all duration-1000 delay-300 ${
+        className={`text-center transition-all duration-1000 delay-300 overflow-hidden ${
           isVisible["intro-stats"]
             ? "opacity-100 scale-100"
             : "opacity-0 scale-75"
@@ -290,7 +290,7 @@ const toggleAudio = () => {
 
       {/* Bloco 2 */}
       <div
-        className={`text-center transition-all duration-1000 delay-400 ${
+        className={`text-center transition-all duration-1000 delay-400 overflow-hidden ${
           isVisible["intro-stats"]
             ? "opacity-100 scale-100"
             : "opacity-0 scale-75"
@@ -316,14 +316,14 @@ const toggleAudio = () => {
 
 
       {/* Seção 3 - Onde o Futuro Já Acontece */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen" id="future">
+      <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen overflow-hidden" id="future"> {/* CORREÇÃO: overflow-hidden */}
         <div 
-          className="bg-cover bg-center min-h-[400px] md:min-h-full order-2 md:order-1"
+          className="bg-cover bg-center min-h-[400px] md:min-h-full order-2 md:order-1 overflow-hidden" /* CORREÇÃO: overflow-hidden */
           style={{ backgroundImage: 'url(/02-china.webp)' }}
         />
-        <div className="bg-[#C8102E] text-white p-12 md:p-16 lg:p-20 flex flex-col justify-center order-1 md:order-2">
+        <div className="bg-[#C8102E] text-white p-12 md:p-16 lg:p-20 flex flex-col justify-center order-1 md:order-2 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight overflow-hidden" /* CORREÇÃO: overflow-hidden */
             data-animate 
             id="future-title"
           >
@@ -334,7 +334,7 @@ const toggleAudio = () => {
             </span>
           </h2>
           <p 
-            className="text-base md:text-lg lg:text-xl leading-relaxed"
+            className="text-base md:text-lg lg:text-xl leading-relaxed overflow-hidden" /* CORREÇÃO: overflow-hidden */
             data-animate 
             id="future-text"
           >
@@ -348,7 +348,7 @@ const toggleAudio = () => {
       </section>
 
       {/* Seção 4 - O Que Irão Vivenciar */}
-      <section className="relative py-20 px-4 text-white min-h-screen flex items-center" id="vivenciar">
+      <section className="relative py-20 px-4 text-white min-h-screen flex items-center overflow-hidden" id="vivenciar"> {/* CORREÇÃO: overflow-hidden */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
@@ -356,31 +356,31 @@ const toggleAudio = () => {
             filter: 'brightness(0.3)'
           }}
         />
-        <div className="container max-w-7xl mx-auto relative z-10">
+        <div className="container max-w-7xl mx-auto relative z-10 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div data-animate id="vivenciar-title">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transition-all duration-1000 ${
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
                 isVisible['vivenciar-title'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 O QUE IRÃO<br />VIVENCIAR
               </h2>
             </div>
-            <div className="space-y-6" data-animate id="vivenciar-items">
-              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-100 ${
+            <div className="space-y-6 overflow-hidden" data-animate id="vivenciar-items"> {/* CORREÇÃO: overflow-hidden */}
+              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-100 overflow-hidden ${
                 isVisible['vivenciar-items'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
                 <p className="text-base md:text-lg leading-relaxed">
                   <span className="font-bold">Imersão em 03 Ecossistemas complementares de inovação:</span> Shanghai, Suzhou e Hangzhou
                 </p>
               </div>
-              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-200 ${
+              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-200 overflow-hidden ${
                 isVisible['vivenciar-items'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
                 <p className="text-base md:text-lg leading-relaxed">
                   <span className="font-bold">Visitas técnicas</span> à empresas líderes com aplicação prática de IA e automação
                 </p>
               </div>
-              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-300 ${
+              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-300 overflow-hidden ${
                 isVisible['vivenciar-items'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
                 <p className="text-base md:text-lg leading-relaxed">
@@ -388,7 +388,7 @@ const toggleAudio = () => {
                   e adaptação da liderança
                 </p>
               </div>
-              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-400 ${
+              <div className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-400 overflow-hidden ${
                 isVisible['vivenciar-items'] ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
               }`}>
                 <p className="text-base md:text-lg leading-relaxed">
@@ -402,7 +402,7 @@ const toggleAudio = () => {
 
       {/* Seção 5 - Resultados Esperados */}
 <section
-  className="relative py-20 px-4 text-white min-h-screen flex items-center"
+  className="relative py-20 px-4 text-white min-h-screen flex items-center overflow-hidden" /* CORREÇÃO: overflow-hidden */
   id="resultados"
 >
   <div
@@ -413,11 +413,11 @@ const toggleAudio = () => {
     }}
   />
   
-  <div className="container max-w-7xl mx-auto relative z-10">
+  <div className="container max-w-7xl mx-auto relative z-10 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
       <div data-animate id="resultados-title">
         <h2
-          className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transition-all duration-1000 ${
+          className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
             isVisible['resultados-title']
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
@@ -427,9 +427,9 @@ const toggleAudio = () => {
         </h2>
       </div>
 
-      <div className="space-y-6" data-animate id="resultados-items">
+      <div className="space-y-6 overflow-hidden" data-animate id="resultados-items"> {/* CORREÇÃO: overflow-hidden */}
         <div
-          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 ${
+          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 overflow-hidden ${
             isVisible['resultados-items']
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-10'
@@ -440,7 +440,7 @@ const toggleAudio = () => {
           </p>
         </div>
         <div
-          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-100 ${
+          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-100 overflow-hidden ${
             isVisible['resultados-items']
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-10'
@@ -451,7 +451,7 @@ const toggleAudio = () => {
           </p>
         </div>
         <div
-          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-200 ${
+          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-200 overflow-hidden ${
             isVisible['resultados-items']
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-10'
@@ -462,7 +462,7 @@ const toggleAudio = () => {
           </p>
         </div>
         <div
-          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-300 ${
+          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-300 overflow-hidden ${
             isVisible['resultados-items']
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-10'
@@ -473,7 +473,7 @@ const toggleAudio = () => {
           </p>
         </div>
         <div
-          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-400 ${
+          className={`border-t-2 border-[#C8102E] pt-4 transition-all duration-1000 delay-400 overflow-hidden ${
             isVisible['resultados-items']
               ? 'opacity-100 translate-x-0'
               : 'opacity-0 translate-x-10'
@@ -488,50 +488,40 @@ const toggleAudio = () => {
   </div>
 </section>
 
-
-{/* Seção 5.5 - Galeria */}
-{/*
-<section className="grid grid-cols-1 md:grid-cols-2 min-h-screen bg-[#C8102E]">
-  <div className="relative min-h-[400px] md:min-h-full flex items-center justify-center p-8">
- 
-  </div>
-</section>
-*/}
 {/* Seção 6 - Ecossistemas */}
-<section className="bg-[#F5E6D3] py-20 px-4" id="eco">
-  <div className="container max-w-6xl mx-auto">
-    <h2
-      className="text-4xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-16 font-bold"
-      data-animate
-      id="eco-title"
-    >
-      <span
-        className={`inline-block transition-all duration-1000 ${
-          isVisible["eco-title"]
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
-      >
-        Ecossistemas
-      </span>
-    </h2>
-
+<section className="bg-[#F5E6D3] py-20 px-4 overflow-hidden" id="eco"> {/* CORREÇÃO: overflow-hidden */}
+  <div className="container max-w-6xl mx-auto overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
+ <h2
+  className="text-4xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-16 font-bold overflow-hidden"
+  data-animate 
+  id="eco-title"
+>
+  <span
+    className={`inline-block transition-all duration-1000 ${
+      isVisible["eco-title"]
+        ? "opacity-100 translate-y-0"
+        : "opacity-0 translate-y-10"
+    }`}
+  >
+    Ecossistemas
+  </span>
+</h2>
     {/* Instrução interativa */}
-    <div className="text-center mb-8" data-animate id="eco-instruction">
+    <div className="text-center mb-8 overflow-hidden" data-animate id="eco-instruction"> {/* CORREÇÃO: overflow-hidden */}
       <p
-        className={`text-lg md:text-xl text-gray-700 italic transition-all duration-1000 delay-300 ${
+        className={`text-lg md:text-xl text-gray-700 italic transition-all duration-1000 delay-300 overflow-hidden ${
           isVisible["eco-instruction"]
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10"
         }`}
       >
-        👆 Clique nos cards para explorar cada ecossistema
+        Clique nos cards para explorar cada ecossistema
       </p>
     </div>
 
     {/* Cards */}
     <div
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12"
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12 overflow-hidden" /* CORREÇÃO: overflow-hidden */
       data-animate
       id="eco-cards"
     >
@@ -591,7 +581,7 @@ const toggleAudio = () => {
     </div>
 
     {/* Indicador de interatividade no mobile */}
-    <div className="md:hidden text-center mb-8">
+    <div className="md:hidden text-center mb-8 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
       <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
         <div className="w-2 h-2 bg-[#C8102E] rounded-full animate-pulse"></div>
         <span className="text-sm text-gray-700 font-medium">Toque para explorar nos cards</span>
@@ -599,7 +589,7 @@ const toggleAudio = () => {
     </div>
 
     {/* Logo */}
-    <div className="text-center" data-animate id="eco-logo">
+    <div className="text-center overflow-hidden" data-animate id="eco-logo"> {/* CORREÇÃO: overflow-hidden */}
       <img
         src="/logo_mb_china.webp"
         alt="MB China Logo"
@@ -662,13 +652,7 @@ const toggleAudio = () => {
 
           {/* Botão de fechar no final também */}
           <div className="flex justify-center pb-10">
-            <button
-              onClick={() => setSelected(null)}
-              className="bg-[#C8102E] text-white hover:bg-[#a00d24] rounded-full px-6 py-3 flex items-center gap-2 shadow-md transition-all duration-300 group"
-            >
-              <X className="w-5 h-5" />
-              <span>Fechar</span>
-            </button>
+       
           </div>
 
           {/* Espaçamento inferior */}
@@ -681,11 +665,11 @@ const toggleAudio = () => {
 
 
 
-      {/* Seção 7 - Líderes */}
-<section className="bg-[#F5E6D3] py-20 px-4" id="leaders">
-  <div className="container max-w-6xl mx-auto">
+      {/* Seção 7 - Líderes - CORRIGIDA */}
+<section className="bg-[#F5E6D3] py-20 px-4 overflow-hidden" id="leaders"> {/* CORREÇÃO: overflow-hidden */}
+  <div className="container max-w-6xl mx-auto overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
     <h2
-      className="text-4xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-6 font-bold"
+      className="text-4xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-6 font-bold overflow-hidden" /* CORREÇÃO: overflow-hidden */
       data-animate
       id="leaders-title"
     >
@@ -701,7 +685,7 @@ const toggleAudio = () => {
     </h2>
 
     <p
-      className="text-center text-base md:text-lg mb-20 text-gray-800 leading-relaxed max-w-3xl mx-auto"
+      className="text-center text-base md:text-lg mb-20 text-gray-800 leading-relaxed max-w-3xl mx-auto overflow-hidden"
       data-animate
       id="leaders-desc"
     >
@@ -720,40 +704,63 @@ const toggleAudio = () => {
   </div>
 </section>
 
-{/* Seção 7.1 - Marx Gabriel */}
-<section className="bg-[#F5E6D3] py-20 px-4 border-t border-[#C8102E]/20" id="marx">
-  <div className="container max-w-5xl mx-auto">
+{/* Seção 7.1 - Marx Gabriel - CORRIGIDA */}
+<section className="bg-[#F5E6D3] py-20 px-4 border-t border-[#C8102E]/20 overflow-hidden" id="marx"> {/* CORREÇÃO: overflow-hidden */}
+  <div className="container max-w-5xl mx-auto overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
     <div
-      className={`flex flex-col md:flex-row items-center gap-8 transition-all duration-1000 ${
+      className={`flex flex-col md:flex-row items-center gap-8 transition-all duration-1000 overflow-hidden ${
         isVisible['marx'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       data-animate
       id="marx"
     >
-      <img
-        src="/marx.webp"
-        alt="Marx Gabriel"
-        className="w-40 h-40 md:w-48 md:h-48 rounded-lg object-cover shadow-lg"
-      />
-      <div className="text-center md:text-left">
-        <h3 className="text-3xl font-bold text-[#C8102E] mb-4">MARX GABRIEL</h3>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          CEO da MB Consultoria, conselheiro e consultor estratégico com foco em
-          desenvolvimento de lideranças de alto desempenho. Especialista em
-          negócios, estratégia e transformação organizacional, conduzindo há
-          mais de duas décadas programas de capacitação executiva e inovação no
-          Brasil e no exterior.
-        </p>
+      <div className="flex-shrink-0">
+        <img
+          src="/marx.webp"
+          alt="Marx Gabriel"
+          className="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg"
+        />
+      </div>
+      <div className="flex-1 text-center md:text-left">
+        <h3 className="text-3xl md:text-4xl font-bold text-[#C8102E] mb-6">MARX GABRIEL</h3>
+
+        <div className="space-y-4">
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            CEO da <span className="font-semibold">MB Consultoria</span>, conselheiro e consultor estratégico
+            com foco em desenvolvimento de lideranças de alto desempenho. 
+          </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Autor do livro <em>"Direto ao Ponto: Gestão sem Rodeios"</em> e 
+            <span className="font-semibold"> Conselheiro de Administração CCA+</span> pelo IBGC, Marx atua há mais de
+            20 anos apoiando organizações em processos de transformação, sucessão
+            e inovação empresarial.
+          </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Sua trajetória inclui a mentoria e consultoria para executivos e famílias empresárias
+            em todo o Brasil, com destaque para empresas como Lojas Gazin, Lojas Bemol, Fogás,
+            Transportes Bertolini, Grupo Apisul, Pneu Forte e diversas outras. 
+          </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Reconhecido por sua abordagem direta, prática e humana na formação de lideranças,
+            tem sido referência em <span className="font-semibold">governança, cultura organizacional e estratégia de crescimento sustentável.</span>
+          </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Pós-graduado em Agronegócios e Mestre em Ciências Empresariais pela 
+            <span className="font-semibold"> Universidade Fernando Pessoa</span> (Portugal), possui formação executiva internacional pelas 
+            principais instituições globais.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-{/* Seção 7.2 - Ricardo Geromel */}
-<section className="bg-[#F5E6D3] py-20 px-4 border-t border-[#C8102E]/20" id="geromel">
-  <div className="container max-w-5xl mx-auto">
+
+{/* Seção 7.2 - Ricardo Geromel - CORRIGIDA */}
+<section className="bg-[#F5E6D3] py-20 px-4 border-t border-[#C8102E]/20 overflow-hidden" id="geromel"> {/* CORREÇÃO: overflow-hidden */}
+  <div className="container max-w-5xl mx-auto overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
     <div
-      className={`flex flex-col md:flex-row-reverse items-center gap-8 transition-all duration-1000 ${
+      className={`flex flex-col md:flex-row-reverse items-center gap-8 transition-all duration-1000 overflow-hidden ${
         isVisible['geromel']
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-10'
@@ -761,35 +768,43 @@ const toggleAudio = () => {
       data-animate
       id="geromel"
     >
-      <img
-        src="/geromel.webp"
-        alt="Ricardo Geromel"
-        className="w-40 h-40 md:w-48 md:h-48 rounded-lg object-cover shadow-lg"
-      />
-      <div className="text-center md:text-left">
-        <h3 className="text-3xl font-bold text-[#C8102E] mb-4">RICARDO GEROMEL</h3>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Ricardo Geromel é empresário, investidor, autor e especialista
-          brasileiro focado nas relações entre o Brasil e a China, bem como em
-          inovação e tecnologia global. Atualmente, é o brasileiro com mais
-          conhecimento sobre o ambiente de negócios, a cultura, economia e poder
-          de mercado da China.
-        </p>
+      <div className="flex-shrink-0">
+        <img
+          src="/geromel.webp"
+          alt="Ricardo Geromel"
+          className="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg"
+        />
+      </div>
+      <div className="flex-1 text-center md:text-left">
+        <h3 className="text-3xl md:text-4xl font-bold text-[#C8102E] mb-6">RICARDO GEROMEL</h3>
+        
+        <div className="space-y-4">
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Ricardo Geromel é empresário, investidor, autor e especialista
+            brasileiro focado nas relações entre o Brasil e a China, bem como em
+            inovação e tecnologia global. Atualmente, é o brasileiro com mais
+            conhecimento sobre o ambiente de negócios, a cultura, economia e poder
+            de mercado da China.
+          </p>
 
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed mt-4">
-          <span className="font-semibold">Formação e trajetória:</span> formado
-          em Administração de Empresas pela Fairleigh Dickinson University (EUA),
-          com M.Sc. em Gestão, especialização em Inovação e Empreendedorismo pela
-          ESCP Europe (França) e formação complementar na ESPM. Viveu em Pequim em 2011,
-          onde fundou uma startup, e atua como palestrante, consultor e autor em
-          temas de economia, inovação e relações Brasil–China.
-        </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            <span className="font-semibold">Formação e trajetória:</span> formado
+            em Administração de Empresas pela Fairleigh Dickinson University (EUA),
+            com M.Sc. em Gestão, especialização em Inovação e Empreendedorismo pela
+            ESCP Europe (França) e formação complementar na ESPM.
+          </p>
 
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed mt-4">
-          Sua vivência na China e compreensão do contexto global lhe dão uma visão
-          estratégica única sobre como o Brasil se insere na dinâmica China–mundo,
-          unindo experiência prática a uma visão transformadora de liderança e inovação.
-        </p>
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Viveu em Pequim em 2011, onde fundou uma startup, e atua como palestrante, 
+            consultor e autor em temas de economia, inovação e relações Brasil–China.
+          </p>
+
+          <p className="text-base md:text-lg text-gray-800 leading-relaxed">
+            Sua vivência na China e compreensão do contexto global lhe dão uma visão
+            estratégica única sobre como o Brasil se insere na dinâmica China–mundo,
+            unindo experiência prática a uma visão transformadora de liderança e inovação.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -797,10 +812,11 @@ const toggleAudio = () => {
 
 
       {/* Seção 8 - Depoimentos */}
-      <section className="bg-[#C8102E] py-20 px-4" id="depo">
-        <div className="container max-w-6xl mx-auto">
+      <section className="bg-[#C8102E] py-20 px-4 overflow-hidden" id="depo"> {/* CORREÇÃO: overflow-hidden */}
+        <div className="container max-w-6xl mx-auto overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
+          {/* CORREÇÃO: overflow-hidden */}
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl text-white text-center mb-16 font-bold"
+            className="text-4xl md:text-5xl lg:text-6xl text-white text-center mb-16 font-bold overflow-hidden"
             data-animate 
             id="depo-title"
           >
@@ -810,8 +826,8 @@ const toggleAudio = () => {
               DEPOIMENTOS
             </span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" data-animate id="depo-cards">
-            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-100 ${
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden" data-animate id="depo-cards"> {/* CORREÇÃO: overflow-hidden */}
+            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-100 overflow-hidden ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
@@ -822,7 +838,7 @@ const toggleAudio = () => {
                 Luiz Alberto Nicolau | CEO Samel
               </p>
             </div>
-            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-200 ${
+            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-200 overflow-hidden ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
@@ -833,7 +849,7 @@ const toggleAudio = () => {
                 Sandra Fernandes, sócia diretora | Lojas COMEPI
               </p>
             </div>
-            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-300 ${
+            <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-300 overflow-hidden ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
               <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
@@ -849,10 +865,10 @@ const toggleAudio = () => {
       </section>
 
 {/* Seção 9 - Informações Finais */}
-<section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3]">
+<section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3] overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
   {/* Coluna do vídeo */}
-  <div className="relative order-1 md:order-2 flex items-center justify-center p-8 md:p-12">
-    <div className="w-full h-full max-h-[70vh] relative">
+  <div className="relative order-1 md:order-2 flex items-center justify-center p-8 md:p-12 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
+    <div className="w-full h-full max-h-[70vh] relative overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
       <video
         className="w-full h-full object-contain"
         src="/MB_CHINA_2026.mp4"
@@ -884,12 +900,12 @@ const toggleAudio = () => {
   </div>
 
   {/* Coluna de texto */}
-  <div className="bg-[#F5E6D3] text-gray-900 p-10 md:p-16 flex flex-col justify-center order-2 md:order-1">
-    <div className="space-y-8 max-w-xl mx-auto" data-animate id="info-content">
+  <div className="bg-[#F5E6D3] text-gray-900 p-10 md:p-16 flex flex-col justify-center order-2 md:order-1 overflow-hidden"> {/* CORREÇÃO: overflow-hidden */}
+    <div className="space-y-8 max-w-xl mx-auto overflow-hidden" data-animate id="info-content"> {/* CORREÇÃO: overflow-hidden */}
       
       {/* Título e descrição */}
       <div
-        className={`transition-all duration-1000 ${
+        className={`transition-all duration-1000 overflow-hidden ${
           isVisible["info-content"]
             ? "opacity-100 translate-x-0"
             : "opacity-0 -translate-x-10"
@@ -907,7 +923,7 @@ const toggleAudio = () => {
 
       {/* Datas e valores */}
       <div
-        className={`transition-all duration-1000 delay-200 ${
+        className={`transition-all duration-1000 delay-200 overflow-hidden ${
           isVisible["info-content"]
             ? "opacity-100 translate-x-0"
             : "opacity-0 -translate-x-10"
