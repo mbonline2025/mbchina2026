@@ -3,6 +3,7 @@ import { X, Download, CheckCircle } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot"; 
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
@@ -871,6 +872,9 @@ const toggleAudio = () => {
 
       {/* Footer */}
       <Footer />
+
+         {/* Chatbot - Adicione no final, antes de fechar a div principal */}
+      <Chatbot />
     </div>
   );
 }
