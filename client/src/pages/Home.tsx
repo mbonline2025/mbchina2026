@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X, Download, CheckCircle } from "lucide-react";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -130,6 +131,23 @@ export default function Home() {
     },
   ];
 
+  // Dentro do seu componente, adicione:
+const [isAudioEnabled, setIsAudioEnabled] = useState(false);
+const videoRef = useRef<HTMLVideoElement>(null);
+
+const toggleAudio = () => {
+  setIsAudioEnabled(!isAudioEnabled);
+  
+  // Garante que o vídeo continue tocando quando o áudio for ativado
+  if (videoRef.current) {
+    if (!isAudioEnabled) {
+      videoRef.current.play().catch(error => {
+        console.log("Erro ao reproduzir vídeo:", error);
+      });
+    }
+  }
+};
+
 
   return (
     <div className="min-h-screen">
@@ -140,7 +158,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(/noite-da-cidade-de-china.jpg)',
+            backgroundImage: 'url(/noite-da-cidade-de-china.webp)',
             filter: 'brightness(0.2)'
           }}
         />
@@ -173,7 +191,7 @@ export default function Home() {
   <div
     className="absolute left-0 top-0 bottom-0 w-1/6 bg-cover bg-center hidden md:block"
     style={{
-      backgroundImage: "url(/traditional-china.jpg)",
+      backgroundImage: "url(/traditional-china.webp)",
       backgroundPosition: "center",
     }}
   />
@@ -182,7 +200,7 @@ export default function Home() {
   <div
     className="absolute right-0 top-0 bottom-0 w-1/6 bg-cover bg-center hidden md:block scale-x-[-1]"
     style={{
-      backgroundImage: "url(/traditional-china.jpg)",
+      backgroundImage: "url(/traditional-china.webp)",
       backgroundPosition: "center",
     }}
   />
@@ -192,7 +210,7 @@ export default function Home() {
     {/* Logo */}
     <div className="text-center mb-8" data-animate id="intro-logo">
       <img
-        src="/logo_mb_china.png"
+        src="/logo_mb_china.webp"
         alt="MB China Logo"
         className={`h-24 md:h-32 mx-auto mb-8 transition-all duration-1000 ${
           isVisible["intro-logo"]
@@ -256,7 +274,7 @@ export default function Home() {
       >
         <div className="flex flex-col items-center">
           <img
-            src="/people.png"
+            src="/people.webp"
             alt="People"
             className="h-20 md:h-28 mb-2"
           />
@@ -279,7 +297,7 @@ export default function Home() {
       >
         <div className="flex flex-col items-center">
           <img
-            src="/predios.png"
+            src="/predios.webp"
             alt="Buildings"
             className="h-20 md:h-28 mb-2"
           />
@@ -300,7 +318,7 @@ export default function Home() {
       <section className="grid grid-cols-1 md:grid-cols-2 min-h-screen" id="future">
         <div 
           className="bg-cover bg-center min-h-[400px] md:min-h-full order-2 md:order-1"
-          style={{ backgroundImage: 'url(/02-china.jpeg)' }}
+          style={{ backgroundImage: 'url(/02-china.webp)' }}
         />
         <div className="bg-[#C8102E] text-white p-12 md:p-16 lg:p-20 flex flex-col justify-center order-1 md:order-2">
           <h2 
@@ -333,7 +351,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: 'url(/chengdu-bridge.jpg)',
+            backgroundImage: 'url(/chengdu-bridge.webp)',
             filter: 'brightness(0.3)'
           }}
         />
@@ -389,7 +407,7 @@ export default function Home() {
   <div
     className="absolute inset-0 bg-cover bg-center"
     style={{
-      backgroundImage: 'url(/01-china.jpeg)',
+      backgroundImage: 'url(/01-china.webp)',
       filter: 'brightness(0.3)'
     }}
   />
@@ -535,7 +553,7 @@ export default function Home() {
     {/* Logo */}
     <div className="text-center" data-animate id="eco-logo">
       <img
-        src="/logo_mb_china.png"
+        src="/logo_mb_china.webp"
         alt="MB China Logo"
         className={`h-32 md:h-40 mx-auto transition-all duration-1000 ${
           isVisible["eco-logo"]
@@ -577,11 +595,11 @@ export default function Home() {
             <img
               src={
                 selected === "shanghai"
-                  ? "/Shanghai_Modal.jpg"
+                  ? "/Shanghai_Modal.webp"
                   : selected === "suzhou"
-                  ? "/Suzhou_Modal.jpg"
+                  ? "/Suzhou_Modal.webp"
                   : selected === "hangzhou"
-                  ? "/Hangzhou_Modal.jpg"
+                  ? "/Hangzhou_Modal.webp"
                   : ""
               }
               alt={selected}
@@ -654,7 +672,7 @@ export default function Home() {
       id="marx"
     >
       <img
-        src="/marx.png"
+        src="/marx.webp"
         alt="Marx Gabriel"
         className="w-40 h-40 md:w-48 md:h-48 rounded-lg object-cover shadow-lg"
       />
@@ -685,7 +703,7 @@ export default function Home() {
       id="geromel"
     >
       <img
-        src="/geromel.png"
+        src="/geromel.webp"
         alt="Ricardo Geromel"
         className="w-40 h-40 md:w-48 md:h-48 rounded-lg object-cover shadow-lg"
       />
@@ -737,7 +755,7 @@ export default function Home() {
             <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-100 ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              <img src="/aspas.png" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
+              <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
               <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">
                 Sua estrutura é estrategicamente alinhada com a dinâmica dos negócios contemporâneos, proporcionando oportunidades e exemplos inspiradores para enfrentar os desafios e transformações no mundo corporativo.
               </p>
@@ -748,7 +766,7 @@ export default function Home() {
             <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-200 ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              <img src="/aspas.png" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
+              <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
               <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">
                 O programa nos proporcionou uma interação com profissionais e empresários, práticas nas visitas às empresas, que nos trouxeram informações ricas e que fomentaram debates muito proveitosos.
               </p>
@@ -759,7 +777,7 @@ export default function Home() {
             <div className={`bg-[#F5E6D3] p-8 rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl delay-300 ${
               isVisible['depo-cards'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              <img src="/aspas.png" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
+              <img src="/aspas.webp" alt="Aspas" className="w-12 h-12 text-[#C8102E] mb-4" />
               <p className="text-gray-800 mb-6 leading-relaxed text-sm md:text-base">
                 O Programa conseguiu aliar seu conteúdo e teoria de temas relevantes. A organização do programa desde a escolha do local, os seminários em sala de aula, os docentes foram feitos com muito cuidado e esmero
               </p>
@@ -775,15 +793,34 @@ export default function Home() {
 <section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3]">
   {/* Coluna do vídeo */}
   <div className="relative order-1 md:order-2 flex items-center justify-center p-8 md:p-12">
-    <div className="w-full h-full max-h-[70vh]">
+    <div className="w-full h-full max-h-[70vh] relative">
       <video
         className="w-full h-full object-contain"
         src="/MB_CHINA_2026.mp4"
         autoPlay
-        muted
+        muted={!isAudioEnabled}
         loop
         playsInline
+        ref={videoRef}
       />
+      
+      {/* Botão de controle de áudio */}
+      <button
+        onClick={toggleAudio}
+        className="absolute bottom-4 right-4 bg-black/70 text-white p-3 rounded-full hover:bg-black/90 transition-all duration-300 backdrop-blur-sm z-10"
+        aria-label={isAudioEnabled ? "Desativar áudio" : "Ativar áudio"}
+      >
+        {isAudioEnabled ? (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M12 6a8 8 0 010 12m-4.5-15.5a12 12 0 010 19m0-19l-3 3m3-3l3 3" />
+          </svg>
+        ) : (
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        )}
+      </button>
     </div>
   </div>
 
@@ -827,35 +864,6 @@ export default function Home() {
           R$ 45.800,00
         </p>
       </div>
-
-      {/* Botões elegantes em branco/transparente - Comentados temporariamente */}
-      {/*
-      <div
-        className={`transition-all duration-1000 delay-400 flex flex-col sm:flex-row gap-4 sm:gap-6 ${
-          isVisible["info-content"]
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-10"
-        }`}
-      >
-        <a
-          href="/MB_CHINA_2026_FOLDER.pdf"
-          download
-          className="flex items-center justify-center gap-2 bg-white/90 text-gray-900 font-medium py-4 px-8 rounded-lg border border-white/80 hover:bg-white hover:border-white transition-all duration-300 text-center backdrop-blur-sm shadow-sm"
-        >
-          <Download className="w-5 h-5" />
-          Mais Informações
-        </a>
-        <a
-          href="https://www.mbconsultoria.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 bg-white text-gray-900 font-semibold py-4 px-8 rounded-lg border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 text-center shadow-sm"
-        >
-          <CheckCircle className="w-5 h-5" />
-          Inscreva-se Agora
-        </a>
-      </div>
-      */}
     </div>
   </div>
 </section>
