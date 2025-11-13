@@ -36,7 +36,7 @@ export default function Home() {
       image: "/Card_1.png",
       content: (
         <>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#C8102E] mb-6">
            A Campeã Econômica e Financeira
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
@@ -74,7 +74,7 @@ export default function Home() {
       image: "/Card_3.png",
       content: (
         <>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#C8102E] mb-6">
             A Cidade da Prosperidade Sustentável
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
@@ -105,7 +105,7 @@ export default function Home() {
       image: "/Card_2.png",
       content: (
         <>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#C8102E] mb-6">
             A Pioneira da Economia Digital da China
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
