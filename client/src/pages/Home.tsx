@@ -36,7 +36,7 @@ export default function Home() {
       content: (
         <>
           <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
-            Shanghai: A Campeã Econômica e Financeira
+           A Campeã Econômica e Financeira
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
             Shanghai é a maior economia urbana da China e o principal centro financeiro do país.
@@ -74,7 +74,7 @@ export default function Home() {
       content: (
         <>
           <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
-            Suzhou: A Cidade da Prosperidade Sustentável
+            A Cidade da Prosperidade Sustentável
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
             Suzhou é considerada “a cidade-prefeitura mais próspera da China”, com um PIB de cerca de
@@ -105,7 +105,7 @@ export default function Home() {
       content: (
         <>
           <h2 className="text-4xl md:text-5xl font-bold text-[#C8102E] mb-6">
-            Hangzhou: A Pioneira da Economia Digital da China
+            A Pioneira da Economia Digital da China
           </h2>
           <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-4">
             Hangzhou é uma das cidades mais vibrantes e emblemáticas da China contemporânea. Localizada
@@ -516,6 +516,19 @@ const toggleAudio = () => {
       </span>
     </h2>
 
+    {/* Instrução interativa */}
+    <div className="text-center mb-8" data-animate id="eco-instruction">
+      <p
+        className={`text-lg md:text-xl text-gray-700 italic transition-all duration-1000 delay-300 ${
+          isVisible["eco-instruction"]
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
+        👆 Clique nos cards para explorar cada ecossistema
+      </p>
+    </div>
+
     {/* Cards */}
     <div
       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12"
@@ -526,13 +539,12 @@ const toggleAudio = () => {
         <div
           key={eco.id}
           onClick={() => setSelected(eco.id)}
-          className={`bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer delay-${
-            (index + 1) * 100
-          } ${
+          className={`group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer relative ${
             isVisible["eco-cards"]
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"
           }`}
+          style={{ transitionDelay: `${(index + 1) * 100}ms` }}
         >
           {/* Imagem com overlay preto */}
           <div
@@ -540,15 +552,50 @@ const toggleAudio = () => {
             style={{ backgroundImage: `url(${eco.image})` }}
           >
             {/* Filtro preto com opacidade */}
-            <div className="absolute inset-0 bg-black/50 transition-all duration-300 hover:bg-black/60" />
+            <div className="absolute inset-0 bg-black/50 transition-all duration-300 group-hover:bg-black/70" />
 
             {/* Título acima do filtro */}
             <h3 className="relative z-10 text-4xl font-bold text-white drop-shadow-lg text-center px-2">
               {eco.title}
             </h3>
+
+            {/* Indicador de clique - Seta ou ícone */}
+            <div className="absolute bottom-4 right-4 z-20">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
+                <svg 
+                  className="w-6 h-6 text-white transform group-hover:translate-x-1 transition-transform duration-300" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Efeito de brilho no hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            {/* Texto de instrução que aparece no hover */}
+            <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <span className="text-white text-sm font-medium bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
+                Clique para explorar
+              </span>
+            </div>
           </div>
+
+          {/* Efeito de borda sutil no hover */}
+          <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 rounded-xl transition-all duration-300 pointer-events-none" />
         </div>
       ))}
+    </div>
+
+    {/* Indicador de interatividade no mobile */}
+    <div className="md:hidden text-center mb-8">
+      <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+        <div className="w-2 h-2 bg-[#C8102E] rounded-full animate-pulse"></div>
+        <span className="text-sm text-gray-700 font-medium">Toque para explorar</span>
+      </div>
     </div>
 
     {/* Logo */}
@@ -584,10 +631,10 @@ const toggleAudio = () => {
           <div className="flex justify-end p-6 sticky top-0 bg-[#F5E6D3]/90 backdrop-blur-md z-50">
             <button
               onClick={() => setSelected(null)}
-              className="bg-[#C8102E] text-white hover:bg-[#a00d24] rounded-full w-10 h-10 flex items-center justify-center shadow-md transition-all duration-300"
+              className="bg-[#C8102E] text-white hover:bg-[#a00d24] rounded-full w-10 h-10 flex items-center justify-center shadow-md transition-all duration-300 group"
               aria-label="Fechar"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 transition-transform group-hover:scale-110" />
             </button>
           </div>
 
@@ -611,6 +658,17 @@ const toggleAudio = () => {
           {/* Texto (logo abaixo da imagem) */}
           <div className="bg-white/95 rounded-2xl shadow-xl p-6 md:p-10 m-6 mt-10 text-gray-800">
             {ecos.find((e) => e.id === selected)?.content}
+          </div>
+
+          {/* Botão de fechar no final também */}
+          <div className="flex justify-center pb-10">
+            <button
+              onClick={() => setSelected(null)}
+              className="bg-[#C8102E] text-white hover:bg-[#a00d24] rounded-full px-6 py-3 flex items-center gap-2 shadow-md transition-all duration-300 group"
+            >
+              <X className="w-5 h-5" />
+              <span>Fechar</span>
+            </button>
           </div>
 
           {/* Espaçamento inferior */}

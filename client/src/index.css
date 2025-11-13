@@ -2,11 +2,51 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* DEFINIÇÃO DA FONTE CY GROTESK WIDE */
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-heavy.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-medium.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Tema, variáveis e estilos */
 @layer base {
   html {
-    font-family: 'Cy Grotesk', sans-serif;
+    font-family: 'Cy Grotesk Wide', sans-serif;
   }
   
   body {
@@ -178,6 +218,41 @@
       max-width: 1280px;
     }
   }
+}
+
+/* Classes utilitárias para a fonte Cy Grotesk Wide */
+.font-cy-wide {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+}
+
+.cy-wide-thin {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+}
+
+.cy-wide-light {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.cy-wide-medium {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.cy-wide-heavy {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.cy-wide-black {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.015em;
 }
 
 /* Animações personalizadas */
