@@ -220,7 +220,7 @@ export default function Home() {
 
           {/* Título */}
           <h2
-            className="text-2xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-8 font-bold leading-tight overflow-hidden"
+            className="text-2xl md:text-4xl lg:text-4xl text-[#C8102E] text-center mb-8 font-bold leading-tight overflow-hidden"
             data-animate
             id="intro-title"
           >
@@ -319,7 +319,7 @@ export default function Home() {
         />
         <div className="bg-[#C8102E] text-white p-8 md:p-16 lg:p-20 flex flex-col justify-center order-1 md:order-2 overflow-hidden">
           <h2 
-            className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight overflow-hidden"
+            className="text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight overflow-hidden"
             data-animate 
             id="future-title"
           >
@@ -657,7 +657,7 @@ export default function Home() {
 <section className="bg-[#F5E6D3] py-16 md:py-20 px-4 overflow-hidden" id="leaders">
   <div className="container max-w-6xl mx-auto overflow-hidden">
     <h2
-      className="text-3xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-6 font-bold overflow-hidden"
+      className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-6 font-bold overflow-hidden"
       data-animate
       id="leaders-title"
     >
