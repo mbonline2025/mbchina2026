@@ -4,6 +4,7 @@ import { X, Download, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot"; 
+import InterestForm from "@/components/InterestForm";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({});
@@ -146,6 +147,8 @@ export default function Home() {
       }
     }
   };
+
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -846,78 +849,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Seção 9 - Informações Finais */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3] overflow-hidden">
-        {/* Coluna do vídeo */}
-        <div className="relative order-1 md:order-2 flex items-center justify-center p-6 md:p-12 overflow-hidden">
-          <div className="w-full h-full max-h-[60vh] md:max-h-[70vh] relative overflow-hidden">
-            <video
-              className="w-full h-full object-contain"
-              src="/MB_CHINA_2026.mp4"
-              autoPlay
-              muted={!isAudioEnabled}
-              loop
-              playsInline
-              ref={videoRef}
-            />
-            
-            {/* Botão de controle de áudio */}
-            <button
-              onClick={toggleAudio}
-              className="absolute bottom-4 right-4 bg-black/70 text-white p-3 rounded-full hover:bg-black/90 transition-all duration-300 backdrop-blur-sm z-10"
-              aria-label={isAudioEnabled ? "Desativar áudio" : "Ativar áudio"}
-            >
-              {isAudioEnabled ? (
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M12 6a8 8 0 010 12m-4.5-15.5a12 12 0 010 19m0-19l-3 3m3-3l3 3" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
+   {/* Seção 9 - Informações Finais */}
+<section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3] overflow-hidden">
+  {/* Coluna do vídeo */}
+  <div className="relative order-1 md:order-2 flex items-center justify-center p-6 md:p-12 overflow-hidden">
+    <div className="w-full h-full max-h-[60vh] md:max-h-[70vh] relative overflow-hidden">
+      <video
+        className="w-full h-full object-contain"
+        src="/MB_CHINA_2026.mp4"
+        autoPlay
+        muted={!isAudioEnabled}
+        loop
+        playsInline
+        ref={videoRef}
+      />
+      
+      {/* Botão de controle de áudio */}
+      <button
+        onClick={toggleAudio}
+        className="absolute bottom-4 right-4 bg-black/70 text-white p-3 rounded-full hover:bg-black/90 transition-all duration-300 backdrop-blur-sm z-10"
+        aria-label={isAudioEnabled ? "Desativar áudio" : "Ativar áudio"}
+      >
+        {isAudioEnabled ? (
+          <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M12 6a8 8 0 010 12m-4.5-15.5a12 12 0 010 19m0-19l-3 3m3-3l3 3" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+          </svg>
+        )}
+      </button>
+    </div>
+  </div>
 
-        {/* Coluna de texto */}
-        <div className="bg-[#F5E6D3] text-gray-900 p-8 md:p-16 flex flex-col justify-center order-2 md:order-1 overflow-hidden">
-          <div className="space-y-6 md:space-y-8 max-w-xl mx-auto overflow-hidden" data-animate id="info-content">
-            
-            {/* Título e descrição */}
-            <div
-              className={`transition-all duration-1000 overflow-hidden ${
-                isVisible["info-content"]
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-10"
-              }`}
-            >
-              <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight tracking-tight">
-                Pronto para a Jornada?
-              </h3>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700">
-                Conheça mais sobre a <strong className="text-gray-900">Executive Mission 2026</strong> e prepare-se
-                para uma experiência transformadora nos principais ecossistemas de
-                inovação da China.
-              </p>
-            </div>
+  {/* Coluna de texto */}
+  <div className="bg-[#F5E6D3] text-gray-900 p-8 md:p-16 flex flex-col justify-center order-2 md:order-1 overflow-hidden">
+    <div className="space-y-6 md:space-y-8 max-w-xl mx-auto overflow-hidden" data-animate id="info-content">
+      
+      {/* Título e descrição */}
+      <div
+        className={`transition-all duration-1000 overflow-hidden ${
+          isVisible["info-content"]
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-10"
+        }`}
+      >
+        <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight tracking-tight">
+          Pronto para a Jornada?
+        </h3>
+        <p className="text-base md:text-lg leading-relaxed text-gray-700">
+          Conheça mais sobre a <strong className="text-gray-900">Executive Mission 2026</strong> e prepare-se
+          para uma experiência transformadora nos principais ecossistemas de
+          inovação da China.
+        </p>
+      </div>
 
-            {/* Datas e valores */}
-            <div
-              className={`transition-all duration-1000 delay-200 overflow-hidden ${
-                isVisible["info-content"]
-                  ? "opacity-100 translate-x-0"
-                  : "opacity-0 -translate-x-10"
-              }`}
-            >
-              <p className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                18 A 22 DE MAIO DE 2026
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Datas e valores */}
+      <div
+        className={`transition-all duration-1000 delay-200 overflow-hidden ${
+          isVisible["info-content"]
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-10"
+        }`}
+      >
+        <p className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+          18 A 22 DE MAIO DE 2026
+        </p>
+        <p className="text-sm text-gray-600 mb-6 uppercase tracking-wide">
+          Vagas Limitadas
+        </p>
+      </div>
+
+      {/* Botão Tenho Interesse */}
+      <div
+        className={`transition-all duration-1000 delay-300 overflow-hidden ${
+          isVisible["info-content"]
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-10"
+        }`}
+      >
+        <button
+          onClick={() => setIsFormOpen(true)}
+          className="w-full md:w-auto bg-[#C8102E] text-white font-bold text-lg md:text-xl py-4 px-8 rounded-lg hover:bg-[#a00d24] transition-colors flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Tenho Interesse
+        </button>
+        
+        <p className="text-xs text-gray-600 text-center mt-4">
+          Entre em contato para mais informações sobre valores e condições
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* Interest Form Modal */}
+<InterestForm 
+  isOpen={isFormOpen} 
+  onClose={() => setIsFormOpen(false)} 
+/>
 
       {/* Footer */}
       <Footer />
