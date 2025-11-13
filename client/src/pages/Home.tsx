@@ -675,7 +675,7 @@ export default function Home() {
 
       {/* FOTO AO LADO EM MOLDURA CIRCULAR - AGORA À DIREITA */}
       <img
-        src="/marx.webp"
+        src="/marx_profile.webp"
         alt="Marx Gabriel"
         className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
       />
@@ -717,7 +717,7 @@ export default function Home() {
 
       {/* FOTO AO LADO EM MOLDURA CIRCULAR - AGORA À DIREITA */}
       <img
-        src="/geromel.webp"
+        src="/geromel_profile.webp"
         alt="Ricardo Geromel"
         className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
       />
