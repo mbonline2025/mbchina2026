@@ -849,7 +849,7 @@ export default function Home() {
         </div>
       </section>
 
-   {/* Seção 9 - Informações Finais */}
+  {/* Seção 9 - Informações Finais CORRIGIDA */}
 <section className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh] bg-[#F5E6D3] overflow-hidden">
   {/* Coluna do vídeo */}
   <div className="relative order-1 md:order-2 flex items-center justify-center p-6 md:p-12 overflow-hidden">
@@ -884,18 +884,12 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Coluna de texto */}
+  {/* Coluna de texto CORRIGIDA */}
   <div className="bg-[#F5E6D3] text-gray-900 p-8 md:p-16 flex flex-col justify-center order-2 md:order-1 overflow-hidden">
-    <div className="space-y-6 md:space-y-8 max-w-xl mx-auto overflow-hidden" data-animate id="info-content">
+    <div className="space-y-6 md:space-y-8 max-w-xl mx-auto">
       
-      {/* Título e descrição */}
-      <div
-        className={`transition-all duration-1000 overflow-hidden ${
-          isVisible["info-content"]
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-10"
-        }`}
-      >
+      {/* Título e descrição CORRIGIDOS */}
+      <div>
         <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight tracking-tight">
           Pronto para a Jornada?
         </h3>
@@ -907,13 +901,7 @@ export default function Home() {
       </div>
 
       {/* Datas e valores */}
-      <div
-        className={`transition-all duration-1000 delay-200 overflow-hidden ${
-          isVisible["info-content"]
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-10"
-        }`}
-      >
+      <div>
         <p className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
           18 A 22 DE MAIO DE 2026
         </p>
@@ -922,17 +910,11 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Botão Tenho Interesse */}
-      <div
-        className={`transition-all duration-1000 delay-300 overflow-hidden ${
-          isVisible["info-content"]
-            ? "opacity-100 translate-x-0"
-            : "opacity-0 -translate-x-10"
-        }`}
-      >
+      {/* Botão Tenho Interesse CORRIGIDO - SEM ANIMAÇÃO */}
+      <div>
         <button
           onClick={() => setIsFormOpen(true)}
-          className="w-full md:w-auto bg-[#C8102E] text-white font-bold text-lg md:text-xl py-4 px-8 rounded-lg hover:bg-[#a00d24] transition-colors flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          className="w-full bg-[#C8102E] text-white font-bold text-lg md:text-xl py-4 px-8 rounded-lg hover:bg-[#a00d24] transition-colors flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
