@@ -653,141 +653,108 @@ export default function Home() {
         )}
       </section>
 
-   {/* Seção 7 - Líderes */}
+  {/* Seção 7 - Líderes */}
 <section className="bg-[#F5E6D3] py-16 md:py-20 px-4 overflow-hidden" id="leaders">
   <div className="container max-w-6xl mx-auto overflow-hidden">
-    <h2
-      className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-6 font-bold overflow-hidden"
-      data-animate
-      id="leaders-title"
-    >
-      <span
-        className={`inline-block transition-all duration-1000 ${
-          isVisible['leaders-title']
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-10'
-        }`}
-      >
-        LIDERANÇA COM PROPÓSITO E<br />ALCANCE GLOBAL
-      </span>
+    <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-6 font-bold" data-animate id="leaders-title">
+      LIDERANÇA COM PROPÓSITO E<br />ALCANCE GLOBAL
     </h2>
 
-    <p
-      className="text-center text-base md:text-lg mb-16 md:mb-20 text-gray-800 leading-relaxed max-w-3xl mx-auto overflow-hidden"
-      data-animate
-      id="leaders-desc"
-    >
-      <span
-        className={`inline-block transition-all duration-1000 delay-200 ${
-          isVisible['leaders-desc']
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 translate-y-10'
-        }`}
-      >
-        A missão será conduzida por profissionais com ampla experiência em
-        educação executiva, inovação e negócios com a China, garantindo uma
-        jornada rica em conteúdo, conexões e inspiração.
-      </span>
+    <p className="text-center text-base md:text-lg mb-16 md:mb-20 text-gray-800 leading-relaxed max-w-3xl mx-auto" data-animate id="leaders-desc">
+      A missão será conduzida por profissionais com ampla experiência em
+      educação executiva, inovação e negócios com a China, garantindo uma
+      jornada rica em conteúdo, conexões e inspiração.
     </p>
   </div>
 </section>
 
-{/* Seção 7.1 - Marx Gabriel */}
-<section className="bg-[#F5E6D3] py-16 md:py-20 px-4 border-t border-[#C8102E]/20 overflow-hidden" id="marx">
-  <div className="container max-w-5xl mx-auto overflow-hidden">
-    <div
-      className={`flex flex-col items-center gap-6 md:gap-8 transition-all duration-1000 overflow-hidden ${
-        isVisible['marx'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-      data-animate
-      id="marx"
-    >
-      <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-4 md:mb-6 text-center">MARX GABRIEL</h3>
+{/* Marx Gabriel */}
+<section className="bg-[#F5E6D3] py-16 md:py-20 px-4 border-t border-[#C8102E]/20" id="marx">
+  <div className="container max-w-6xl mx-auto">
+    <div className="flex flex-col md:flex-row-reverse items-center md:items-center gap-20 md:gap-24">
 
-      {/* Foto abaixo do nome */}
+      {/* FOTO AO LADO EM MOLDURA CIRCULAR - AGORA À DIREITA */}
       <img
         src="/marx.webp"
         alt="Marx Gabriel"
-        className="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg mb-6"
+        className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
       />
 
-      <div className="space-y-4 text-center md:text-left">
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          CEO da <span className="font-semibold">MB Consultoria</span>, conselheiro e consultor estratégico
-          com foco em desenvolvimento de lideranças de alto desempenho.
-        </p>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Autor do livro <em>"Direto ao Ponto: Gestão sem Rodeios"</em> e
-          <span className="font-semibold"> Conselheiro de Administração CCA+</span> pelo IBGC, Marx atua há mais de
-          20 anos apoiando organizações em processos de transformação, sucessão
-          e inovação empresarial.
-        </p>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Sua trajetória inclui a mentoria e consultoria para executivos e famílias empresárias
-          em todo o Brasil, com destaque para empresas como Lojas Gazin, Lojas Bemol, Fogás,
-          Transportes Bertolini, Grupo Apisul, Pneu Forte e diversas outras.
-        </p>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Reconhecido por sua abordagem direta, prática e humana na formação de lideranças,
-          tem sido referência em <span className="font-semibold">governança, cultura organizacional e estratégia de crescimento sustentável.</span>
-        </p>
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Pós-graduado em Agronegócios e Mestre em Ciências Empresariais pela
-          <span className="font-semibold"> Universidade Fernando Pessoa</span> (Portugal), possui formação executiva internacional pelas
-          principais instituições globais.
-        </p>
+      <div className="flex-1">
+        <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">MARX GABRIEL</h3>
+
+        <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
+          <p>
+            CEO da <span className="font-semibold">MB Consultoria</span>, conselheiro e consultor estratégico
+            com foco em desenvolvimento de lideranças de alto desempenho.
+          </p>
+          <p>
+            Autor do livro <em>"Direto ao Ponto: Gestão sem Rodeios"</em> e
+            <span className="font-semibold"> Conselheiro de Administração CCA+</span> pelo IBGC, Marx atua há mais de
+            20 anos apoiando organizações em processos de transformação, sucessão
+            e inovação empresarial.
+          </p>
+       
+          <p>
+            Reconhecido por sua abordagem direta, prática e humana na formação de lideranças,
+            tem sido referência em <span className="font-semibold">governança, cultura organizacional e estratégia de crescimento sustentável.</span>
+          </p>
+          <p>
+            Pós-graduado em Agronegócios e Mestre em Ciências Empresariais pela
+            <span className="font-semibold"> Universidade Fernando Pessoa</span> (Portugal), possui formação executiva internacional pelas
+            principais instituições globais.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-{/* Seção 7.2 - Ricardo Geromel */}
-<section className="bg-[#F5E6D3] py-16 md:py-20 px-4 border-t border-[#C8102E]/20 overflow-hidden" id="geromel">
-  <div className="container max-w-5xl mx-auto overflow-hidden">
-    <div
-      className={`flex flex-col items-center gap-6 md:gap-8 transition-all duration-1000 overflow-hidden ${
-        isVisible['geromel'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-      data-animate
-      id="geromel"
-    >
-      <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-4 md:mb-6 text-center">RICARDO GEROMEL</h3>
+{/* Ricardo Geromel */}
+<section className="bg-[#F5E6D3] py-16 md:py-20 px-4 border-t border-[#C8102E]/20" id="geromel">
+  <div className="container max-w-6xl mx-auto">
+    <div className="flex flex-col md:flex-row-reverse items-center md:items-center gap-20 md:gap-24">
 
-      {/* Foto abaixo do nome */}
+      {/* FOTO AO LADO EM MOLDURA CIRCULAR - AGORA À DIREITA */}
       <img
         src="/geromel.webp"
         alt="Ricardo Geromel"
-        className="w-48 h-48 md:w-56 md:h-56 rounded-lg object-cover shadow-lg mb-6"
+        className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white"
       />
 
-      <div className="space-y-4 text-center md:text-left">
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Ricardo Geromel é empresário, investidor, autor e especialista
-          brasileiro focado nas relações entre o Brasil e a China, bem como em
-          inovação e tecnologia global.
-        </p>
+      <div className="flex-1">
+        <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">RICARDO GEROMEL</h3>
 
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          <span className="font-semibold">Formação e trajetória:</span> formado
-          em Administração de Empresas pela Fairleigh Dickinson University (EUA),
-          com M.Sc. em Gestão, especialização em Inovação e Empreendedorismo pela
-          ESCP Europe (França) e formação complementar na ESPM.
-        </p>
+        <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
+          <p>
+            Ricardo Geromel é empresário, investidor, autor e especialista
+            brasileiro focado nas relações entre o Brasil e a China, bem como em
+            inovação e tecnologia global.
+          </p>
 
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Viveu em Pequim em 2011, onde fundou uma startup, e atua como palestrante,
-          consultor e autor em temas de economia, inovação e relações Brasil–China.
-        </p>
+          <p>
+            <span className="font-semibold">Formação e trajetória:</span> formado
+            em Administração de Empresas pela Fairleigh Dickinson University (EUA),
+            com M.Sc. em Gestão, especialização em Inovação e Empreendedorismo pela
+            ESCP Europe (França) e formação complementar na ESPM.
+          </p>
 
-        <p className="text-base md:text-lg text-gray-800 leading-relaxed">
-          Sua vivência na China e compreensão do contexto global lhe dão uma visão
-          estratégica única sobre como o Brasil se insere na dinâmica China–mundo,
-          unindo experiência prática a uma visão transformadora de liderança e inovação.
-        </p>
+          <p>
+            Viveu em Pequim em 2011, onde fundou uma startup, e atua como palestrante,
+            consultor e autor em temas de economia, inovação e relações Brasil–China.
+          </p>
+
+          <p>
+            Sua vivência na China e compreensão do contexto global lhe dão uma visão
+            estratégica única sobre como o Brasil se insere na dinâmica China–mundo,
+            unindo experiência prática a uma visão transformadora de liderança e inovação.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
       {/* Seção 8 - Depoimentos */}
