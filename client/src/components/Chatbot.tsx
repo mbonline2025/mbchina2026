@@ -21,7 +21,7 @@ export default function Chatbot() {
                 size: 56,
                 dragAndDrop: true,
                 iconColor: 'white',
-                customIconSrc: '/chatbot-icon.svg', // Crie um ícone personalizado
+                customIconSrc: 'https://cdn-icons-png.flaticon.com/512/2840/2840156.png',
                 autoWindowOpen: {
                     autoOpen: false,
                     openDelay: 5,
@@ -50,7 +50,9 @@ export default function Chatbot() {
                     "Quais são as datas da missão?",
                     "Quanto custa investir?",
                     "Quais cidades visitaremos?",
-                    "Quem são os líderes da missão?"
+                    "Quem são os líderes da missão?",
+                    "Como funciona o processo de inscrição?",
+                    "Preciso de visto para a China?"
                 ],
                 starterPromptFontSize: 13,
                 clearChatOnReload: false,
@@ -64,7 +66,7 @@ export default function Chatbot() {
                     backgroundColor: '#C8102E',
                     textColor: '#ffffff',
                     showAvatar: true,
-                    avatarSrc: '/user-icon.svg'
+                    avatarSrc: 'https://cdn-icons-png.flaticon.com/512/847/847969.png'
                 },
                 textInput: {
                     placeholder: 'Digite sua pergunta sobre a missão...',
@@ -93,7 +95,9 @@ export default function Chatbot() {
 
     return () => {
       // Remove o script quando o componente for desmontado
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
