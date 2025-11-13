@@ -8,7 +8,7 @@ interface InterestFormProps {
 }
 
 // SUAS CREDENCIAIS DO EMAILJS
-const EMAILJS_SERVICE_ID = 'service_7xa3efs';
+const EMAILJS_SERVICE_ID = '7XA3EFSOfwX7TllDr';
 const EMAILJS_TEMPLATE_ID = 'template_3c4ht2c'; // Template ID atualizado
 const EMAILJS_PUBLIC_KEY = '7XA3EFSOfwX7TllDr';
 
