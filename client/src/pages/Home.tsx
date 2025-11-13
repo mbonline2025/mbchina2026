@@ -239,7 +239,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
 
           {/* Título */}
           <h2
-            className="text-2xl md:text-4xl lg:text-4xl text-[#C8102E] text-center mb-8 font-bold leading-tight overflow-hidden"
+            className="text-2xl md:text-3xl lg:text-4xl text-[#C8102E] text-center mb-8 font-bold leading-tight overflow-hidden"
             data-animate
             id="intro-title"
           >
@@ -338,7 +338,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
         />
         <div className="bg-[#C8102E] text-white p-8 md:p-16 lg:p-20 flex flex-col justify-center order-1 md:order-2 overflow-hidden">
           <h2 
-            className="text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight overflow-hidden"
+            className="text-3xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 md:mb-8 overflow-hidden"
             data-animate 
             id="future-title"
           >
@@ -374,7 +374,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
         <div className="container max-w-7xl mx-auto relative z-10 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <div data-animate id="vivenciar-title">
-              <h2 className={`text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
+              <h2 className={`text-3xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
                 isVisible['vivenciar-title'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}>
                 O QUE IRÃO<br />VIVENCIAR
@@ -429,7 +429,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <div data-animate id="resultados-title">
               <h2
-                className={`text-3xl md:text-6xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
+                className={`text-3xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight transition-all duration-1000 overflow-hidden ${
                   isVisible['resultados-title']
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-10'
@@ -504,7 +504,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
       <section className="bg-[#F5E6D3] py-20 px-4 overflow-hidden" id="eco">
         <div className="container max-w-6xl mx-auto overflow-hidden">
           <h2
-            className="text-3xl md:text-5xl lg:text-6xl text-[#C8102E] text-center mb-12 md:mb-16 font-bold overflow-hidden"
+            className="text-3xl md:text-3xl lg:text-4xl text-[#C8102E] text-center mb-12 md:mb-16 font-bold overflow-hidden"
             data-animate
             id="eco-title"
           >
@@ -675,7 +675,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
   {/* Seção 7 - Líderes */}
 <section className="bg-[#F5E6D3] py-16 md:py-20 px-4 overflow-hidden" id="leaders">
   <div className="container max-w-6xl mx-auto overflow-hidden">
-    <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#C8102E] text-center mb-6 font-bold" data-animate id="leaders-title">
+    <h2 className="text-3xl md:text-3xl lg:text-4xl text-[#C8102E] text-center mb-6 font-bold" data-animate id="leaders-title">
       LIDERANÇA COM PROPÓSITO E<br />ALCANCE GLOBAL
     </h2>
 
@@ -700,7 +700,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
       />
 
       <div className="flex-1">
-        <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">MARX GABRIEL</h3>
+        <h3 className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">MARX GABRIEL</h3>
 
         <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
           <p>
@@ -742,7 +742,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
       />
 
       <div className="flex-1">
-        <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">RICARDO GEROMEL</h3>
+        <h3 className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#C8102E] mb-6 text-center md:text-left">RICARDO GEROMEL</h3>
 
         <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
           <p>
@@ -780,7 +780,7 @@ const JustifiedLine = ({ text, className = "" }: { text: string; className?: str
       <section className="bg-[#C8102E] py-16 md:py-20 px-4 overflow-hidden" id="depo">
         <div className="container max-w-6xl mx-auto overflow-hidden">
           <h2 
-            className="text-3xl md:text-5xl lg:text-6xl text-white text-center mb-12 md:mb-16 font-bold overflow-hidden"
+            className="text-3xl md:text-3xl lg:text-4xl text-white text-center mb-12 md:mb-16 font-bold overflow-hidden"
             data-animate 
             id="depo-title"
           >
