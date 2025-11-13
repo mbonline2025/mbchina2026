@@ -579,7 +579,7 @@ const toggleAudio = () => {
             {/* Texto de instrução que aparece no hover */}
             <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
               <span className="text-white text-sm font-medium bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
-                Clique para explorar
+            Clique para explorar
               </span>
             </div>
           </div>
@@ -594,7 +594,7 @@ const toggleAudio = () => {
     <div className="md:hidden text-center mb-8">
       <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
         <div className="w-2 h-2 bg-[#C8102E] rounded-full animate-pulse"></div>
-        <span className="text-sm text-gray-700 font-medium">Toque para explorar</span>
+        <span className="text-sm text-gray-700 font-medium">Toque para explorar nos cards</span>
       </div>
     </div>
 
