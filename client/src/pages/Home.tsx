@@ -910,7 +910,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Botão Tenho Interesse CORRIGIDO - SEM ANIMAÇÃO */}
+      {/* Botão Tenho Interesse */}
       <div>
         <button
           onClick={() => setIsFormOpen(true)}
