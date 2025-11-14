@@ -73,7 +73,7 @@ export default function Footer() {
         <div className="border-t border-[#C8102E]/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#F5E6D3] text-sm text-center md:text-left">
-              © 2025 MB Consultoria. Todos os direitos reservados.
+              © 2025 - 2026 MB Consultoria. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm text-[#F5E6D3]">
               <a href="#" className="hover:text-white transition-colors">
