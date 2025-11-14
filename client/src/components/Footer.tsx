@@ -63,7 +63,7 @@ export default function Footer() {
                 className="flex items-center gap-3 p-3 text-[#F5E6D3] hover:text-white hover:bg-white/5 rounded-lg transition-all duration-300"
               >
                 <Globe className="w-5 h-5" />
-                <span>Site Oficial</span>
+                <span>Site MB Consultoria</span>
               </a>
             </div>
           </div>
