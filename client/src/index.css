@@ -1,0 +1,723 @@
+/* ORDEM CORRETA DE IMPORTAÇÃO */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* DEFINIÇÃO DA FONTE CY GROTESK WIDE */
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-heavy.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cy Grotesk Wide';
+  src: url('/fonts/cy-grotesk-wide-medium.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CORREÇÕES CRÍTICAS PARA VAZAMENTO */
+@layer base {
+  html {
+    font-family: 'Cy Grotesk Wide', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  img, video, iframe, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, span, a, li, div {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
+/* Modo escuro */
+@custom-variant dark (&:is(.dark *));
+
+/* Variáveis de tema inline */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Tema claro */
+:root {
+  --primary: oklch(0.45 0.22 25);
+  --primary-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.45 0.22 25);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --chart-1: oklch(0.45 0.22 25);
+  --chart-2: oklch(0.55 0.22 25);
+  --chart-3: oklch(0.65 0.22 25);
+  --chart-4: oklch(0.75 0.22 25);
+  --chart-5: oklch(0.85 0.22 25);
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.93 0.02 50);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.93 0.02 50);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.93 0.02 50);
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.45 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.85 0.01 50);
+  --input: oklch(0.85 0.01 50);
+  --ring: oklch(0.45 0.22 25);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-accent: oklch(0.93 0.02 50);
+  --sidebar-accent-foreground: oklch(0.1 0 0);
+  --sidebar-border: oklch(0.85 0.01 50);
+  --sidebar-ring: oklch(0.45 0.22 25);
+}
+
+/* Tema escuro */
+.dark {
+  --primary: var(--color-blue-700);
+  --primary-foreground: var(--color-blue-50);
+  --sidebar-primary: var(--color-blue-500);
+  --sidebar-primary-foreground: var(--color-blue-50);
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.85 0.005 65);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.85 0.005 65);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.85 0.005 65);
+  --secondary: oklch(0.24 0.006 286.033);
+  --secondary-foreground: oklch(0.7 0.005 65);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.92 0.005 65);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.488 0.243 264.376);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.85 0.005 65);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
+}
+
+/* Estilos base */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+/* COMPONENTES CORRIGIDOS - FOCAR EM PREVENIR VAZAMENTO */
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* CONTAINER MAIS SEGURO PARA MOBILE */
+  @media (max-width: 639px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      max-width: 100vw;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
+
+/* Classes utilitárias para a fonte Cy Grotesk Wide */
+.font-cy-wide {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+}
+
+.cy-wide-thin {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 100;
+  letter-spacing: -0.02em;
+}
+
+.cy-wide-light {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.cy-wide-medium {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.cy-wide-heavy {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.cy-wide-black {
+  font-family: 'Cy Grotesk Wide', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+}
+
+/* UTILITÁRIOS PARA CORRIGIR VAZAMENTO */
+.no-overflow {
+  overflow: hidden !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.max-w-full {
+  max-width: 100% !important;
+}
+
+.w-screen-safe {
+  width: 100vw;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* TEXTOS À PROVA DE VAZAMENTO */
+.text-balance {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+/* ANIMAÇÕES PERSONALIZADADAS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Classes de animação */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 2s ease-in-out infinite;
+}
+
+.animate-scroll {
+  animation: scroll 2s ease-in-out infinite;
+}
+
+/* Atrasos de animação */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Classes de transição suave */
+.transition-all-smooth {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform-smooth {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-opacity-smooth {
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efeito de elevação no hover */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover scale */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Hover para texto */
+.text-hover-primary {
+  transition: color 0.3s ease;
+}
+
+.text-hover-primary:hover {
+  color: oklch(0.45 0.22 25);
+}
+
+/* Efeito de brilho */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.3);
+}
+
+/* Botão animado */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animated::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-animated:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Efeito de shimmer para imagens */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Gradiente animado */
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Overlay de entrada */
+.overlay-fade-in {
+  animation: overlayFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Card flutuante */
+.card-float {
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll personalizado */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.45 0.22 25) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: oklch(0.45 0.22 25);
+  border-radius: 20px;
+}
+
+/* Focus styles acessíveis */
+.focus-visible {
+  @apply outline-none ring-2 ring-[#C8102E] ring-offset-2;
+}
+
+/* Classes para loader */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #C8102E;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efeito de parallax suave */
+.parallax {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* DEBUG - REMOVA EM PRODUÇÃO */
+.debug * {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.debug-overflow {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+  border: 2px dashed red !important;
+}
