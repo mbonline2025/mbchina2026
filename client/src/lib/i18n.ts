@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       title: "MB CHINA",
       date: "EXECUTIVE MISSION 18 A 22 DE MAIO 2026",
-      status: "Turma 2026 EM ANDAMENTO. Vivenciando a maior missão executiva brasileira na China!",
+      status: "Turma 2026 EM ANDAMENTO",
       description: "Uma experiência global de alto impacto no ecossistema de inovação da China para executivos estratégicos.",
       cta: "Garanta sua Vaga para 2027",
       footnote: "*Turma 2026 em andamento com 40 executivos brasileiros explorando os principais ecossistemas de inovação. Próxima turma 2027: garanta sua vaga!",
@@ -178,7 +178,7 @@ export const translations = {
     hero: {
       title: "MB CHINA",
       date: "EXECUTIVE MISSION MAY 18 TO 22, 2026",
-      status: "2026 Class IN PROGRESS. Experiencing the largest Brazilian executive mission in China!",
+      status: "2026 Class IN PROGRESS",
       description: "A high-impact global experience in China's innovation ecosystem for strategic executives.",
       cta: "Secure Your Spot for 2027",
       footnote: "*2026 Class in progress with 40 Brazilian executives exploring China's leading innovation ecosystems. Next 2027 class: secure your spot!",

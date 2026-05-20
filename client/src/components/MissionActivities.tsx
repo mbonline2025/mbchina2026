@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Zap, Play, Calendar, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
+import { MapPin, Zap, Play, Calendar } from "lucide-react";
 
 interface Activity {
   day: number;
@@ -13,15 +12,8 @@ interface Activity {
   summary: string;
 }
 
-interface InstagramPost {
-  day: number;
-  url: string;
-  postNum: number;
-}
-
 export default function MissionActivities() {
   const { language } = useLanguage();
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const activities: Activity[] = [
     {
@@ -103,102 +95,92 @@ export default function MissionActivities() {
     }
   ];
 
-  const instagramPosts: InstagramPost[] = [
-    { day: 1, postNum: 1, url: "https://www.instagram.com/p/DYfNm9fgPhu/?img_index=1" },
-    { day: 1, postNum: 2, url: "https://www.instagram.com/p/DYfldFRD8JI/?img_index=1" },
-    { day: 1, postNum: 3, url: "https://www.instagram.com/p/DYflxJvjzBY/?img_index=1" },
-    { day: 2, postNum: 1, url: "https://www.instagram.com/p/DYgC6XEvCYN/" },
-    { day: 2, postNum: 2, url: "https://www.instagram.com/p/DYh7slikZwP/?img_index=1" }
-  ];
-
-  const scrollCarousel = (dir: "left" | "right") => {
-    if (!carouselRef.current) return;
-    carouselRef.current.scrollBy({ left: dir === "right" ? 280 : -280, behavior: "smooth" });
-  };
-
   return (
-    <section className="relative py-16 md:py-24 text-white overflow-hidden">
-      {/* Imagem de fundo — padrão igual ao Resultados */}
+    <section id="diario" className="relative py-20 px-4 text-white min-h-[80vh] flex items-center overflow-hidden">
+      {/* Background - matching other sections */}
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/wp10834624-suzhou-wallpapers.jpg)", filter: "brightness(0.3)" }} />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-white/20 pb-8">
-          <div className="max-w-2xl">
+      
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
+        {/* Header - matching other sections style */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div data-animate>
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C8102E]/30 rounded-full border border-[#C8102E]/40 mb-4">
               <Zap className="w-3 h-3 text-[#C8102E]" />
               <span className="text-[10px] font-bold text-[#C8102E] uppercase tracking-widest">
                 {language === "br" ? "Em Andamento" : "In Progress"}
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight uppercase">
               {language === "br" ? "Diário da Missão" : "Mission Diary"}
             </h2>
           </div>
-          <div className="flex gap-4">
-            <div className="text-right">
-              <p className="text-2xl font-bold text-[#C8102E]">40</p>
-              <p className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Executivos</p>
+          <div className="flex items-end md:justify-end" data-animate>
+            <div className="text-left md:text-right border-l-2 md:border-l-0 md:border-r-2 border-[#C8102E] pl-4 md:pl-0 md:pr-4">
+              <p className="text-4xl font-bold text-[#C8102E]">40</p>
+              <p className="text-sm font-bold text-white/70 uppercase tracking-widest">
+                {language === "br" ? "Executivos" : "Executives"}
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Grid de Atividades */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {/* Activities Grid - improved cards to match the aesthetic */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {activities.map((activity, idx) => (
             <div
               key={idx}
-              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-500 flex flex-col overflow-hidden"
+              className="group flex flex-col bg-black/40 backdrop-blur-md border-t-2 border-[#C8102E] p-6 hover:bg-black/60 transition-all duration-500"
               data-animate
             >
-              {/* Thumbnail/Video */}
-              <div className="relative aspect-video bg-gray-900 overflow-hidden">
+              {/* Day & Date */}
+              <div className="flex justify-between items-start mb-4">
+                <div className="bg-[#C8102E] px-2 py-1 rounded text-[10px] font-bold text-white flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  DIA {activity.day}
+                </div>
+                <div className="flex items-center gap-1 text-[#C8102E] text-[10px] font-bold uppercase tracking-wider">
+                  <MapPin className="w-3 h-3" />
+                  {activity.date}
+                </div>
+              </div>
+
+              {/* Video/Thumbnail Area */}
+              <div className="relative aspect-video bg-gray-900 mb-6 overflow-hidden rounded-sm">
                 {activity.videoId ? (
                   <iframe
-                    className="w-full h-full opacity-80 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-full opacity-70 group-hover:opacity-100 transition-opacity"
                     src={`https://www.youtube.com/embed/${activity.videoId}?controls=0&modestbranding=1`}
                     title={activity.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-white/5">
-                    <Play className="w-8 h-8 text-white/30" />
+                    <Play className="w-8 h-8 text-white/20" />
                   </div>
                 )}
-                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-bold text-white flex items-center gap-1">
-                  <Calendar className="w-3 h-3 text-[#C8102E]" />
-                  DIA {activity.day}
-                </div>
               </div>
 
               {/* Content */}
-              <div className="p-5 flex-1 flex flex-col">
-                <div className="mb-3">
-                  <div className="flex items-center gap-1 text-[#C8102E] text-[10px] font-bold uppercase tracking-wider mb-1">
-                    <MapPin className="w-3 h-3" />
-                    {activity.date}
-                  </div>
-                  <h3 className="text-base font-bold text-white leading-tight group-hover:text-[#C8102E] transition-colors mb-2 uppercase">
-                    {activity.title}
-                  </h3>
-                  <p className="text-xs text-white/60 leading-relaxed">
-                    {activity.summary}
-                  </p>
-                </div>
-
-                <div className="space-y-3 mt-auto">
-                  <div className="flex flex-wrap gap-1">
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-3 uppercase group-hover:text-[#C8102E] transition-colors">
+                  {activity.title}
+                </h3>
+                <p className="text-sm text-white/70 leading-relaxed mb-6">
+                  {activity.summary}
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
                     {activity.companies.map((company, cidx) => (
-                      <span key={cidx} className="text-[9px] font-bold bg-white/10 text-white/70 px-2 py-0.5 rounded border border-white/10">
+                      <span key={cidx} className="text-[10px] font-bold bg-white/5 text-white/60 px-2 py-1 rounded border border-white/10">
                         {company}
                       </span>
                     ))}
                   </div>
-                  <ul className="space-y-1.5">
+                  <ul className="space-y-2">
                     {activity.highlights.map((highlight, hidx) => (
                       <li key={hidx} className="flex items-center gap-2 text-xs text-white/50">
-                        <div className="w-1 h-1 rounded-full bg-[#C8102E]/60 shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#C8102E] shrink-0" />
                         {highlight}
                       </li>
                     ))}
@@ -207,89 +189,6 @@ export default function MissionActivities() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Instagram Carrossel */}
-        <div className="mt-16 border-t border-white/20 pt-12">
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center gap-3">
-              <Instagram className="w-5 h-5 text-[#C8102E]" />
-              <h3 className="text-xl font-bold text-[#C8102E] uppercase">
-                {language === "br" ? "Bastidores no Instagram" : "Behind the Scenes on Instagram"}
-              </h3>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => scrollCarousel("left")}
-                className="w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-[#C8102E] hover:border-[#C8102E] transition-all"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => scrollCarousel("right")}
-                className="w-9 h-9 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-[#C8102E] hover:border-[#C8102E] transition-all"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={carouselRef}
-            className="flex gap-4 overflow-x-auto pb-3 scroll-smooth"
-            style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {instagramPosts.map((post, idx) => (
-              <a
-                key={idx}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex-shrink-0 w-52 flex flex-col items-center justify-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-[#C8102E]/40 hover:-translate-y-1 transition-all duration-300"
-                style={{ scrollSnapAlign: "start" }}
-              >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                  <Instagram className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-center">
-                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">
-                    {language === "br" ? `DIA 0${post.day}` : `DAY 0${post.day}`}
-                  </p>
-                  <p className="text-sm font-bold text-white group-hover:text-[#C8102E] transition-colors">
-                    Post {post.postNum}
-                  </p>
-                </div>
-                <span className="text-[10px] text-[#C8102E] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                  {language === "br" ? "Ver post ↗" : "View post ↗"}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-[#C8102E] flex items-center justify-center">
-              <Play className="w-5 h-5 text-white fill-current" />
-            </div>
-            <div>
-              <p className="text-white font-bold text-sm">
-                {language === "br" ? "Acompanhe em tempo real" : "Follow in real time"}
-              </p>
-              <p className="text-white/50 text-xs">
-                {language === "br" ? "Bastidores exclusivos no nosso Instagram" : "Exclusive behind the scenes on our Instagram"}
-              </p>
-            </div>
-          </div>
-          <a
-            href="https://www.instagram.com/mb_consultoria/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-white text-gray-900 font-bold text-xs rounded-full hover:bg-[#C8102E] hover:text-white transition-all"
-          >
-            @MB_CONSULTORIA
-          </a>
         </div>
       </div>
     </section>
