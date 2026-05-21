@@ -59,6 +59,7 @@ export default function MissionActivities() {
         language === "br" ? "Parque Sino-Singapura" : "Sino-Singapore Park",
         language === "br" ? "Robovans Autônomos L4" : "L4 Autonomous Robovans"
       ],
+      videoId: "jdXJbJzAAxQ",
       summary: language === "br"
         ? "Zeron em gestão de energia, o icônico Parque Suzhou-Singapura e os robovans autônomos L4 da Zelos em operação real — Suzhou como laboratório de cidades inteligentes."
         : "Zeron in energy management, the iconic Suzhou-Singapore Park, and Zelos' L4 autonomous robovans in real operation — Suzhou as a smart cities laboratory."
