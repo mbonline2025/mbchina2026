@@ -39,6 +39,15 @@ export default function TestimonialsSection() {
         : "I saw factories that operate literally in the dark. AI integrated into the operation not as a pilot project, but as a reality. The method and discipline are surgical.",
       avatar: "https://media.licdn.com/dms/image/v2/D4D03AQFsKFAHpAkGlA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1715220668102?e=2147483647&v=beta&t=k85pDyrwrV1DmKGVWAfD1ATkNqhYsftoqpx_O4zxHMo",
       linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7462530208882122752/"
+    },
+    {
+      name: "Samy Lins",
+      role: "Gerente Geral UNE Logística · Navegação Cunha",
+      content: language === "br"
+        ? "Visitar a China hoje é enxergar, de forma concreta, um possível retrato do mundo que já começou a ser construído."
+        : "Visiting China today is seeing, in concrete terms, a possible portrait of the world that has already begun to be built.",
+      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQHeg-LsldPaxA/profile-displayphoto-shrink_800_800/B4DZZvFpgfGwAk-/0/1745620475938?e=1781136000&v=beta&t=LsONuhLZ2LaALyYIYjGskgYsdxgPkFLoPBe5JT5Lkus",
+      linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7463486317033631745/?actorCompanyId=5219997"
     }
   ];
 
@@ -56,7 +65,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, idx) => (
             <div
               key={idx}

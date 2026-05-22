@@ -13,10 +13,10 @@ export const translations = {
     hero: {
       title: "MB CHINA",
       date: "EXECUTIVE MISSION 18 A 22 DE MAIO 2026",
-      status: "Turma 2026 EM ANDAMENTO",
+      status: "Turma 2026 · Missão Concluída",
       description: "Uma experiência global de alto impacto no ecossistema de inovação da China para executivos estratégicos.",
       cta: "Garanta sua Vaga para 2027",
-      footnote: "*Turma 2026 em andamento com 40 executivos brasileiros explorando os principais ecossistemas de inovação. Próxima turma 2027: garanta sua vaga!",
+      footnote: "*Missão 2026 encerrada com sucesso: 40 executivos brasileiros, 5 dias, 4 ecossistemas. Próxima turma 2027: garanta sua vaga!",
       diff: [
         { label: 'Grupo limitado', value: 'Curadoria executiva' },
         { label: 'Networking', value: 'Alto nível' },
@@ -178,10 +178,10 @@ export const translations = {
     hero: {
       title: "MB CHINA",
       date: "EXECUTIVE MISSION MAY 18 TO 22, 2026",
-      status: "2026 Class IN PROGRESS",
+      status: "2026 Class · Mission Completed",
       description: "A high-impact global experience in China's innovation ecosystem for strategic executives.",
       cta: "Secure Your Spot for 2027",
-      footnote: "*2026 Class in progress with 40 Brazilian executives exploring China's leading innovation ecosystems. Next 2027 class: secure your spot!",
+      footnote: "*2026 Mission completed: 40 Brazilian executives, 5 days, 4 innovation ecosystems. Next 2027 class: secure your spot!",
       diff: [
         { label: 'Limited group', value: 'Executive curation' },
         { label: 'Networking', value: 'High level' },

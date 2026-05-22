@@ -122,7 +122,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="relative z-10 w-full text-white">
           <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center px-4">
-            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+            <div className={`text-center max-w-4xl mx-auto transition-all duration-1000 delay-300 mt-12 sm:mt-16 md:mt-20 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <div className="inline-flex flex-col items-center gap-3 sm:gap-4 md:gap-6 w-full">
                 <h1 className="font-extrabold text-[clamp(1.8rem,8vw,4.5rem)] leading-[0.95] tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.28em] break-words uppercase">
                   {heroT.title}

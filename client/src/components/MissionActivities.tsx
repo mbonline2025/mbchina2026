@@ -75,6 +75,7 @@ export default function MissionActivities() {
         language === "br" ? "Maior mercado do mundo" : "World's largest market",
         language === "br" ? "Cadeia de suprimentos" : "Supply chain"
       ],
+      videoId: "ozHgwgRgO-4",
       summary: language === "br"
         ? "Tecnologia industrial de ponta na Hfun-tech e o maior mercado de commodities do mundo no Yiwu Futian Market — os bastidores da produção global revelados."
         : "Cutting-edge industrial technology at Hfun-tech and the world's largest commodity market at Yiwu Futian Market — the backstage of global production revealed."
@@ -108,7 +109,7 @@ export default function MissionActivities() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C8102E]/30 rounded-full border border-[#C8102E]/40 mb-4">
               <Zap className="w-3 h-3 text-[#C8102E]" />
               <span className="text-[10px] font-bold text-[#C8102E] uppercase tracking-widest">
-                {language === "br" ? "Em Andamento" : "In Progress"}
+                {language === "br" ? "Missão Concluída" : "Mission Completed"}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold leading-tight uppercase">
