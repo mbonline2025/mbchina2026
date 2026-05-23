@@ -91,6 +91,7 @@ export default function MissionActivities() {
         language === "br" ? "Mídia out-of-home" : "Out-of-home media",
         language === "br" ? "Indústria de consumo" : "Consumer industry"
       ],
+      videoId: "DGMr0IGB4eo",
       summary: language === "br"
         ? "Encerramento em Shanghai: saúde premium no Parkway Hospital, mídia de massa na Focus Media e a potência da indústria de consumo com a Longrich."
         : "Closing in Shanghai: premium healthcare at Parkway Hospital, mass media at Focus Media, and the power of consumer industry with Longrich."
