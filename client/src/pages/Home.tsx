@@ -1,7 +1,7 @@
 // client/src/pages/Home.tsx
 
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import { ArrowRight, Volume2, VolumeX, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 
 import Header from "@/components/Header";
 import { Link } from "wouter";
@@ -28,14 +28,10 @@ export default function Home() {
   const leadersT = t.leaders;
   const aboutT = t.about_section;
 
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isAudioEnabled, setIsAudioEnabled] = useState(false);
-  
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -86,20 +82,6 @@ export default function Home() {
       return newState;
     });
   }, []);
-
-  const nextSlide = useCallback(() => setCurrentSlide(prev => (prev + 1) % leaders.length), [leaders.length]);
-  const prevSlide = useCallback(() => setCurrentSlide(prev => (prev - 1 + leaders.length) % leaders.length), [leaders.length]);
-
-  const handleTouchStart = useCallback((e: React.TouchEvent) => setTouchStart(e.targetTouches[0].clientX), []);
-  const handleTouchMove = useCallback((e: React.TouchEvent) => setTouchEnd(e.targetTouches[0].clientX), []);
-  const handleTouchEnd = useCallback(() => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    if (distance > 50) nextSlide();
-    else if (distance < -50) prevSlide();
-    setTouchStart(null);
-    setTouchEnd(null);
-  }, [touchStart, touchEnd, nextSlide, prevSlide]);
 
   return (
     <div className={`min-h-screen overflow-x-hidden transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -258,24 +240,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 data-animate className="text-2xl md:text-5xl text-[#C8102E] text-center mb-6 font-bold animate-section uppercase">{leadersT.title}</h2>
           <p data-animate className="text-center text-sm md:text-lg mb-12 text-gray-800 max-w-3xl mx-auto animate-section delay-100">{leadersT.description}</p>
-          <div className="relative group">
-            <button onClick={prevSlide} className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 bg-[#C8102E] text-white w-12 h-12 rounded-full items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all"><ChevronLeft /></button>
-            <button onClick={nextSlide} className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 bg-[#C8102E] text-white w-12 h-12 rounded-full items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all"><ChevronRight /></button>
-            <div className="overflow-hidden select-none" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-              <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                {leaders.map((leader) => (
-                  <div key={leader.id} className="min-w-full px-4 md:px-8">
-                    <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-                      <div className="flex-1 flex justify-center"><img src={leader.image} alt={leader.name} className="w-48 md:w-96 h-48 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white" /></div>
-                      <div className="flex-1 w-full text-center md:text-left">
-                        <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6">{leader.name}</h3>
-                        <div className="space-y-4 text-gray-800 text-sm md:text-lg">{leader.description.map((text, idx) => (<p key={idx}>{text}</p>))}</div>
-                      </div>
-                    </div>
+          <div className="px-4 md:px-8">
+            {leaders.map((leader) => (
+              <div key={leader.id}>
+                <div className="flex flex-col md:flex-row-reverse items-center gap-12">
+                  <div className="flex-1 flex justify-center"><img src={leader.image} alt={leader.name} className="w-48 md:w-96 h-48 md:h-96 rounded-full object-cover shadow-2xl border-4 border-white" /></div>
+                  <div className="flex-1 w-full text-center md:text-left">
+                    <h3 className="text-2xl md:text-4xl font-bold text-[#C8102E] mb-6">{leader.name}</h3>
+                    <div className="space-y-4 text-gray-800 text-sm md:text-lg">{leader.description.map((text, idx) => (<p key={idx}>{text}</p>))}</div>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
