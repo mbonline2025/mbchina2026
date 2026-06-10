@@ -52,17 +52,6 @@ export default function Home() {
         <>{leadersT.marx.desc4}</>
       ]
     },
-    {
-      id: "geromel",
-      name: leadersT.geromel.name,
-      image: "/geromel_profile.webp",
-      description: [
-        <>{leadersT.geromel.desc1}</>,
-        <>{leadersT.geromel.desc2}</>,
-        <>{leadersT.geromel.desc3}</>,
-        <>{leadersT.geromel.desc4}</>
-      ]
-    }
   ], [leadersT]);
 
   useEffect(() => {

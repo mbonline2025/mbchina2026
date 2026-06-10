@@ -155,13 +155,6 @@ export const translations = {
         desc3: "Reconhecido por sua abordagem direta, prática e humana em governança, cultura organizacional e estratégia.",
         desc4: "Mestre em Ciências Empresariais pela Universidade Fernando Pessoa (Portugal), com formação executiva internacional."
       },
-      geromel: {
-        name: "RICARDO GEROMEL",
-        desc1: "Empresário, investidor e autor brasileiro focado nas relações entre o Brasil e a China.",
-        desc2: "Formado em Administração pela Fairleigh Dickinson University (EUA), com M.Sc. em Gestão e especialização em inovação pela ESCP Europe.",
-        desc3: "Viveu em Pequim, fundou startup na China e atua como palestrante e consultor em economia e inovação.",
-        desc4: "Possui uma visão estratégica única sobre a dinâmica China–mundo e o papel do Brasil."
-      }
     }
   },
   en: {
@@ -320,13 +313,6 @@ export const translations = {
         desc3: "Recognized for his direct, practical, and human approach to governance, organizational culture, and strategy.",
         desc4: "Master's degree in Business Sciences from Fernando Pessoa University (Portugal), with international executive training."
       },
-      geromel: {
-        name: "RICARDO GEROMEL",
-        desc1: "Brazilian entrepreneur, investor, and author focused on relations between Brazil and China.",
-        desc2: "Graduated in Administration from Fairleigh Dickinson University (USA), with M.Sc. in Management and specialization in innovation from ESCP Europe.",
-        desc3: "Lived in Beijing, founded a startup in China, and works as a speaker and consultant in economics and innovation.",
-        desc4: "Has a unique strategic vision on China-world dynamics and Brazil's role."
-      }
     }
   },
   zh: {
@@ -485,13 +471,6 @@ export const translations = {
         desc3: "因其在治理、组织文化 e 战略方面 de 直接、实用 e 人性化方法而获得认可。",
         desc4: "葡萄牙费尔南多·佩索亚大学企业科学硕士学位，具有国际高管培训经验。"
       },
-      geromel: {
-        name: "RICARDO GEROMEL",
-        desc1: "巴西企业家、投资者 e 作者，专注于巴西与中国之间 de 关系。",
-        desc2: "美国费尔利·迪金森大学行政管理专业毕业生，拥有欧洲高等商学院管理硕士学位 e 创新专业化。",
-        desc3: "曾在北京生活，在中国创办初创公司，担任经济学 e 创新方面 de 演讲者 e 顾问。",
-        desc4: "对中国-世界动态 e 巴西角色具有独特 de 战略视野。"
-      }
     }
   }
 };
