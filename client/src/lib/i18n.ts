@@ -147,7 +147,7 @@ export const translations = {
     },
     leaders: {
       title: "LIDERANÇA COM PROPÓSITO E ALCANCE GLOBAL",
-      description: "A missão foi conduzida por profissionais com ampla experiência em educação executiva, inovação e negócios com a China, garantindo uma jornada rica em conteúdo, conexões e inspiração.",
+      description: "A missão foi conduzida por Marx Gabriel, executivo com ampla experiência em educação executiva, inovação e negócios.",
       marx: {
         name: "MARX GABRIEL",
         desc1: "CEO da MB Consultoria, conselheiro e consultor estratégico com foco em desenvolvimento de lideranças de alto desempenho.",
