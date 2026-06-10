@@ -28,21 +28,21 @@ export const translations = {
       sectors_2: ['Saúde', 'Indústria', 'Logística', 'Tecnologia']
     },
     vivenciar: {
-      title: "O QUE IRÃO VIVENCIAR",
+      title: "O QUE VIVENCIARAM",
       items: [
-        "Imersão em 04 Ecossistemas complementares de inovação Shanghai, Suzhou, Hangzhou e Yiwu",
-        "Visitas técnicas à empresas líderes com aplicação prática de IA e automação",
+        "Imersão em 04 Ecossistemas complementares de inovação: Shanghai, Suzhou, Hangzhou e Yiwu",
+        "Visitas técnicas a empresas líderes com aplicação prática de IA e automação",
         "Desenvolvimento de visão global e adaptação da liderança",
-        "Vivenciar cases reais para ampliar o potencial de suas lideranças e negócios"
+        "Vivenciaram cases reais que ampliaram o potencial de suas lideranças e negócios"
       ]
     },
     resultados: {
-      title: "RESULTADOS ESPERADOS",
+      title: "RESULTADOS ALCANÇADOS",
       items: [
         "Compreensão profunda de modelos de inovação e execução em escala com IA e automação",
         "Rede de contatos qualificada e estratégica",
-        "Insights práticos para aplicação imediata em suas organizações",
-        "Capacidade ampliada da liderança na era da IA",
+        "Insights práticos aplicados imediatamente em suas organizações",
+        "Capacidade de liderança ampliada na era da IA",
         "Transformação de conhecimento em vantagem competitiva"
       ]
     },
@@ -147,7 +147,7 @@ export const translations = {
     },
     leaders: {
       title: "LIDERANÇA COM PROPÓSITO E ALCANCE GLOBAL",
-      description: "A missão será conduzida por profissionais com ampla experiência em educação executiva, inovação e negócios com a China, garantindo uma jornada rica em conteúdo, conexões e inspiração.",
+      description: "A missão foi conduzida por profissionais com ampla experiência em educação executiva, inovação e negócios com a China, garantindo uma jornada rica em conteúdo, conexões e inspiração.",
       marx: {
         name: "MARX GABRIEL",
         desc1: "CEO da MB Consultoria, conselheiro e consultor estratégico com foco em desenvolvimento de lideranças de alto desempenho.",
@@ -186,20 +186,20 @@ export const translations = {
       sectors_2: ['Health', 'Industry', 'Logistics', 'Technology']
     },
     vivenciar: {
-      title: "WHAT YOU WILL EXPERIENCE",
+      title: "WHAT THEY EXPERIENCED",
       items: [
         "Immersion in 04 complementary innovation ecosystems: Shanghai, Suzhou, Hangzhou, and Yiwu",
         "Technical visits to leading companies with practical application of AI and automation",
         "Global vision development and leadership adaptation",
-        "Experience real cases to expand the potential of your leadership and business"
+        "Real cases that expanded the potential of their leadership and business"
       ]
     },
     resultados: {
-      title: "EXPECTED RESULTS",
+      title: "RESULTS ACHIEVED",
       items: [
         "Deep understanding of innovation models and execution at scale with AI and automation",
         "Qualified and strategic networking",
-        "Practical insights for immediate application in your organizations",
+        "Practical insights applied immediately in their organizations",
         "Expanded leadership capacity in the AI era",
         "Transformation of knowledge into competitive advantage"
       ]
@@ -305,7 +305,7 @@ export const translations = {
     },
     leaders: {
       title: "LEADERSHIP WITH PURPOSE AND GLOBAL REACH",
-      description: "The mission will be led by professionals with extensive experience in executive education, innovation, and business with China, ensuring a journey rich in content, connections, and inspiration.",
+      description: "The mission was led by professionals with extensive experience in executive education, innovation, and business with China, delivering a journey rich in content, connections, and inspiration.",
       marx: {
         name: "MARX GABRIEL",
         desc1: "CEO of MB Consultoria, advisor and strategic consultant focused on developing high-performance leadership.",
@@ -332,7 +332,7 @@ export const translations = {
       status: "2026年班级已确认。班级已满！",
       description: "为战略高管提供中国创新生态系统的高影响力全球体验。",
       cta: "立即锁定名额",
-      footnote: "*2026年班级正在进行中，来自各行各业的高管确认参加。",
+      footnote: "*2026年任务圆满完成：40位巴西高管，5天，4个创新生态系统。2027年下一期：立即锁定名额！",
       diff: [
         { label: '专属小组', value: '高管策划' },
         { label: '人际网络', value: '高水平' },
@@ -344,16 +344,16 @@ export const translations = {
       sectors_2: ['医疗健康', '工业', '物流', '技术']
     },
     vivenciar: {
-      title: "您将体验到什么",
+      title: "他们体验到了什么",
       items: [
         "沉浸在上海、苏州、杭州和义乌四个互补的创新生态系统中",
-        "实地考察应用人工智能 e 自动化的领先企业",
-        "培养全球视野 e 领导力适应能力",
-        "体验真实案例，挖掘领导力 e 业务潜力"
+        "实地考察应用人工智能与自动化的领先企业",
+        "培养全球视野与领导力适应能力",
+        "体验真实案例，挖掘领导力与业务潜力"
       ]
     },
     resultados: {
-      title: "预期成果",
+      title: "已取得的成果",
       items: [
         "深入理解创新模式以及人工智能 e 自动化的规模化执行",
         "建立高质量的战略人际网络",
@@ -378,10 +378,10 @@ export const translations = {
       }
     },
     about_section: {
-      title: "准备好出发了吗？",
-      description: "了解更多关于2026年执行任务的信息，为中国主要创新生态系统的变革体验做好准备。",
-      date_range: "2026年5月18日至22日",
-      cta: "立即锁定名额",
+      title: "准备好参加2027年之旅了吗？",
+      description: "为下一届高管任务做好准备，在中国主要创新生态系统中体验一段变革性旅程。",
+      date_range: "下一期：2027年5月",
+      cta: "立即锁定2027年名额",
     },
     instagram: {
       follow: "关注",
@@ -442,13 +442,13 @@ export const translations = {
     form: {
       title: "MB 中国高管任务",
       subtitle: "2027 年预注册",
-      extra_spots_alert: "额外名额 2026",
-      extra_spots_desc: "我们为 2026 年 5 月版本提供最后一个额外名额。填写以保证优先权。",
-      next_mission_alert: "下一个任务 2027",
-      next_mission_desc: "预注册 2027 年版本，成为首批获得信息的人之一。",
-      mission_type_label: "选择一个选项：",
-      extra_spots_option: "额外名额 2026",
-      next_mission_option: "下一个任务 2027",
+      extra_spots_alert: "2026年任务进行中",
+      extra_spots_desc: "关注我们当前的旅程。2026年名额已关闭。",
+      next_mission_alert: "2027年报名开放",
+      next_mission_desc: "锁定2027年版本的名额，优先获取独家信息。",
+      mission_type_label: "兴趣：",
+      extra_spots_option: "关注2026年任务",
+      next_mission_option: "锁定2027年名额",
       full_name: "全名",
       company_position: "公司/职位",
       phone_whatsapp: "电话/WhatsApp",
@@ -463,7 +463,7 @@ export const translations = {
     },
     leaders: {
       title: "具有使命感 e 全球视野 de 领导力",
-      description: "该任务将由在高管教育、创新 e 中国业务方面拥有丰富经验 de 专业人士领导，确保一段充满内容、联系 e 灵感 de 旅程。",
+      description: "该任务由在高管教育、创新与中国业务方面拥有丰富经验的专业人士领导，带来了一段充满内容、联系与灵感的旅程。",
       marx: {
         name: "MARX GABRIEL",
         desc1: "MB Consultoria 首席执行官，顾问 e 战略顾问，专注于开发高绩效领导力。",
